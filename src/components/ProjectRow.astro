@@ -12,6 +12,19 @@ const [endYear, endMonth] = project.period.end ? project.period.end.split('/').m
 const monthsCount = endYear
   ? (endYear - startYear) * 12 + (endMonth - startMonth + 1)
   : '進行中';
+
+// Define trending technologies priority order
+const trendingTechs = ['TypeScript', 'React', 'Next.js', 'Python', 'FastAPI', 'Flutter', 'PostgreSQL', 'Go', 'AWS', 'Firebase', 'GraphQL', 'Kotlin', 'Vue.js'];
+
+// Sort technologies by trending priority
+const sortedTechs = [
+  ...project.technologies.filter(t => trendingTechs.includes(t)).sort((a, b) => trendingTechs.indexOf(a) - trendingTechs.indexOf(b)),
+  ...project.technologies.filter(t => !trendingTechs.includes(t))
+];
+
+const displayTechs = sortedTechs.slice(0, 6); // 2 rows × 3 columns
+const collapsedTechs = sortedTechs.slice(6);
+const hasMoreTechs = collapsedTechs.length > 0;
 ---
 
 <tr class="hover:bg-bg-section transition project-row cursor-pointer" data-project-id={project.id} data-techs={project.technologies.join(',')}>
@@ -29,14 +42,25 @@ const monthsCount = endYear
   <td class="px-lg py-md text-body text-text-secondary text-right whitespace-nowrap">{monthsCount}ヶ月</td>
   <td class="px-lg py-md text-body text-text-primary font-medium whitespace-nowrap">{project.name}</td>
   <td class="px-lg py-md text-body text-text-secondary">
-    <div class="flex gap-xs flex-wrap">
-      {project.technologies.slice(0, 3).map(tech => (
+    <div class="flex gap-xs flex-wrap items-center tech-container" data-tech-container={project.id}>
+      {displayTechs.map(tech => (
         <span class="inline-block px-sm py-xs rounded bg-tag-unselected-bg text-tag-unselected-text text-small">
           {tech}
         </span>
       ))}
-      {project.technologies.length > 3 && (
-        <span class="text-small text-text-tertiary">+{project.technologies.length - 3}</span>
+      {hasMoreTechs && (
+        <>
+          <span class="tech-collapsed hidden" data-project-id={project.id}>
+            {collapsedTechs.map(tech => (
+              <span class="inline-block px-sm py-xs rounded bg-tag-unselected-bg text-tag-unselected-text text-small">
+                {tech}
+              </span>
+            ))}
+          </span>
+          <button class="tech-expand-btn inline-block px-sm py-xs rounded text-tag-unselected-text text-small hover:underline cursor-pointer" data-project-id={project.id} type="button">
+            +{collapsedTechs.length} more
+          </button>
+        </>
       )}
     </div>
   </td>
@@ -54,7 +78,7 @@ const monthsCount = endYear
       <div>
         <h4 class="text-subheading text-text-primary font-semibold mb-sm">使用技術</h4>
         <div class="flex gap-xs flex-wrap">
-          {project.technologies.map(tech => (
+          {sortedTechs.map(tech => (
             <span class="inline-block px-sm py-xs rounded bg-tag-unselected-bg text-tag-unselected-text text-small">
               {tech}
             </span>

@@ -9,8 +9,11 @@ interface Props {
 
 const { projects } = Astro.props;
 
+// Sort projects by ID in descending order (newest first)
+const sortedProjects = [...projects].sort((a, b) => b.id - a.id);
+
 // Get all unique technologies
-const allTechs = Array.from(new Set(projects.flatMap(p => p.technologies))).sort();
+const allTechs = Array.from(new Set(sortedProjects.flatMap(p => p.technologies))).sort();
 ---
 
 <div class="space-y-lg">
@@ -43,7 +46,7 @@ const allTechs = Array.from(new Set(projects.flatMap(p => p.technologies))).sort
   </div>
 
   {/* Projects table */}
-  <ProjectTable projects={projects} />
+  <ProjectTable projects={sortedProjects} />
 </div>
 
 <script>

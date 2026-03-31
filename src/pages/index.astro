@@ -122,4 +122,25 @@ const careerData = data as CareerSheetData;
       }
     });
   });
+
+  // Technology expand/collapse handler
+  const techExpandBtns = document.querySelectorAll('.tech-expand-btn');
+  techExpandBtns.forEach((btn: Element) => {
+    btn.addEventListener('click', (e: Event) => {
+      e.stopPropagation(); // Prevent triggering accordion
+      const projectId = (btn as HTMLElement).getAttribute('data-project-id');
+      const collapsedTechs = document.querySelector(`.tech-collapsed[data-project-id="${projectId}"]`);
+      
+      if (collapsedTechs) {
+        if (collapsedTechs.classList.contains('hidden')) {
+          collapsedTechs.classList.remove('hidden');
+          (btn as HTMLElement).textContent = '- collapse';
+        } else {
+          collapsedTechs.classList.add('hidden');
+          const count = collapsedTechs.querySelectorAll('span').length;
+          (btn as HTMLElement).textContent = `+${count} more`;
+        }
+      }
+    });
+  });
 </script>
