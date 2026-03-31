@@ -16,8 +16,8 @@ const monthsCount = endYear
 
 <tr class="hover:bg-bg-section transition project-row cursor-pointer" data-project-id={project.id} data-techs={project.technologies.join(',')}>
   <td class="px-lg py-md text-body text-text-secondary text-center">
-    <svg class:list={['w-5 h-5 inline-block transform transition-transform chevron', `chevron-${project.id}`]} style="transform: rotate(0deg);">
-      <path fill="currentColor" d="M8.293 10.293a1 1 0 011.414 0L10 11.586l.293-.293a1 1 0 111.414 1.414l-1.42 1.42a1 1 0 01-1.414 0l-1.42-1.42a1 1 0 010-1.414z"></path>
+    <svg class:list={['w-5 h-5 inline-block transform transition-transform chevron', `chevron-${project.id}`]} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(0deg);">
+      <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </td>
   <td class="px-lg py-md text-body text-text-secondary">{index}</td>
