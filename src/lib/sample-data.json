@@ -1,212 +1,890 @@
 {
-    "profile": {
-        "bio": "学生時代にHTML/CSS、JavaScript、VBAを学び、プログラマーとしてキャリアを開始。自社サービス企業での業務システム開発、ソフトウェアハウスでのWeb系開発を経て、フリーランスとしてSES・受託案件に従事。以降、受託案件を中心に見積もりから開発・リリースまで一貫して担当。サーバーサイド、フロントエンド、スマホアプリまで幅広く対応可能。",
-        "github": "https://github.com/ogata-ryosuke"
-    },
-    "specialties": {
-        "title": "得意分野",
-        "items": [
-            "要件整理から仕様・設計への落とし込み",
-            "Webアプリ、モバイルアプリ、APIサーバ、DBをまたいだ一貫した設計・開発",
-            "フルスクラッチ案件における技術選定、実装方針の具体化、開発推進",
-            "既存システムの問題点整理、スパゲッティコードの分解、改善方針の立案",
-            "OpenAI等のLLMを活用した機能開発、評価ロジック設計、改善運用の設計",
-            "小規模〜中規模チームでのリーダー／テックリード業務"
-        ]
-    },
-    "skills": {
-        "frontend": [
-            "Flutter",
-            "React Native",
-            "React",
-            "Next.js",
-            "JavaScript",
-            "TypeScript"
-        ],
-        "backend": [
-            "Python (FastAPI)",
-            "Ruby on Rails",
-            "PHP",
-            "Go",
-            "Java"
-        ],
-        "infrastructure": [
-            "AWS",
-            "GCP",
-            "Terraform",
-            "Firebase"
-        ],
-        "ai": [
-            "OpenAI",
-            "LangSmith",
-            "promptfoo"
-        ]
-    },
-    "selfPR": {
-        "summary": "学生時代にHTML/CSS、JavaScript、VBAを学び、プログラマーとしてキャリアを開始しました。",
-        "strengths": [
-            "サーバーサイド、フロントエンド、スマホアプリまで幅広く対応できます。",
-            "リーダー経験を活かし、設計・スケジュール・育成を含むポジションでの参画が可能です。",
-            "請負案件を多くこなしてきたため、一般的なSESの方より、作り切る能力、問題点を明確にし解決に導く能力はあります。"
-        ]
-    },
-    "projects": [
-        {
-            "id": 41,
-            "period": {
-                "start": "2026/01",
-                "end": "2026/03"
-            },
-            "monthCount": 3,
-            "name": "AI文書レビュープラットフォーム",
-            "technologies": [
-                "TypeScript",
-                "Next.js",
-                "React"
-            ],
-            "teamSize": 9,
-            "description": "大手金融機関向けのAI活用文書レビュープラットフォーム。ユーザーが文書をアップロードすると、OpenAI APIを使用して自動でレビュー・指摘を実施。React+Next.jsで高速なUIを実装。"
-        },
-        {
-            "id": 40,
-            "period": {
-                "start": "2025/10",
-                "end": "2025/12"
-            },
-            "monthCount": 3,
-            "name": "ECサイト決済機能開発",
-            "technologies": [
-                "React",
-                "Python",
-                "Stripe"
-            ],
-            "teamSize": 5,
-            "description": "既存ECサイトへの決済機能追加。Stripe APIを統合し、複数の支払い方法に対応。"
-        },
-        {
-            "id": 39,
-            "period": {
-                "start": "2025/07",
-                "end": "2025/09"
-            },
-            "monthCount": 3,
-            "name": "モバイルアプリ（iOS/Android）",
-            "technologies": [
-                "Flutter",
-                "Firebase"
-            ],
-            "teamSize": 4,
-            "description": "フロントエンドは Flutter で iOS/Android 共通実装。バックエンドは Firebase を活用。"
-        },
-        {
-            "id": 38,
-            "period": {
-                "start": "2025/04",
-                "end": "2025/06"
-            },
-            "monthCount": 3,
-            "name": "社内業務システムリプレイス",
-            "technologies": [
-                "Ruby on Rails",
-                "PostgreSQL"
-            ],
-            "teamSize": 7,
-            "description": "レガシー COBOL システムの Rails への移行。データマイグレーション、テスト、トレーニング全てを担当。"
-        },
-        {
-            "id": 37,
-            "period": {
-                "start": "2025/01",
-                "end": "2025/03"
-            },
-            "monthCount": 3,
-            "name": "API サーバー構築（Go）",
-            "technologies": [
-                "Go",
-                "PostgreSQL",
-                "AWS"
-            ],
-            "teamSize": 3,
-            "description": "高速・スケーラブルなマイクロサービス API を Go で実装。AWS ECS 上でコンテナ実行。"
-        },
-        {
-            "id": 36,
-            "period": {
-                "start": "2024/10",
-                "end": "2024/12"
-            },
-            "monthCount": 3,
-            "name": "Web アプリケーション フルスタック",
-            "technologies": [
-                "Next.js",
-                "TypeScript",
-                "Tailwind CSS"
-            ],
-            "teamSize": 6,
-            "description": "デザインからリリースまで一貫して担当。Tailwind CSS でレスポンシブなUIを実装。"
-        },
-        {
-            "id": 35,
-            "period": {
-                "start": "2024/07",
-                "end": "2024/09"
-            },
-            "monthCount": 3,
-            "name": "データ分析ダッシュボード",
-            "technologies": [
-                "Python",
-                "Elasticsearch",
-                "React"
-            ],
-            "teamSize": 4,
-            "description": "大規模データから洞察を引き出すダッシュボード開発。Elasticsearch でインデックス、React で可視化。"
-        },
-        {
-            "id": 34,
-            "period": {
-                "start": "2024/04",
-                "end": "2024/06"
-            },
-            "monthCount": 3,
-            "name": "LLM チャットボット",
-            "technologies": [
-                "OpenAI",
-                "Python",
-                "FastAPI"
-            ],
-            "teamSize": 3,
-            "description": "OpenAI API を使用したカスタムチャットボット。ユースケースに合わせてプロンプト・評価ロジックを設計。"
-        },
-        {
-            "id": 33,
-            "period": {
-                "start": "2024/01",
-                "end": "2024/03"
-            },
-            "monthCount": 3,
-            "name": "モバイル UI 最適化",
-            "technologies": [
-                "React Native",
-                "TypeScript"
-            ],
-            "teamSize": 2,
-            "description": "既存 React Native アプリのパフォーマンス改善。Re-render 最適化、遅延ロード導入。"
-        },
-        {
-            "id": 32,
-            "period": {
-                "start": "2023/10",
-                "end": "2023/12"
-            },
-            "monthCount": 3,
-            "name": "PHP + Laravel 開発",
-            "technologies": [
-                "Laravel",
-                "Vue.js",
-                "MySQL"
-            ],
-            "teamSize": 5,
-            "description": "従来型 Web フレームワークでの開発。管理画面、API、バッチ処理を実装。"
-        }
+  "profile": {
+    "bio": "学生時代にHTML/CSS、JavaScript、VBAを学び、プログラマーとしてキャリアを開始。自社サービス企業での業務システム開発、ソフトウェアハウスでのWeb系開発を経て、フリーランスとしてSES・受託案件に従事。以降、受託案件を中心に見積もりから開発・リリースまで一貫して担当。サーバーサイド、フロントエンド、スマホアプリまで幅広く対応可能。",
+    "github": "https://github.com/ogata-ryosuke"
+  },
+  "specialties": {
+    "title": "得意分野",
+    "items": [
+      "要件整理から仕様・設計への落とし込み",
+      "Webアプリ、モバイルアプリ、APIサーバ、DBをまたいだ一貫した設計・開発",
+      "フルスクラッチ案件における技術選定、実装方針の具体化、開発推進",
+      "既存システムの問題点整理、スパゲッティコードの分解、改善方針の立案",
+      "OpenAI等のLLMを活用した機能開発、評価ロジック設計、改善運用の設計",
+      "小規模〜中規模チームでのリーダー／テックリード業務"
     ]
+  },
+  "skills": {
+    "frontend": [
+      "Flutter",
+      "React Native",
+      "React",
+      "Next.js",
+      "JavaScript",
+      "TypeScript"
+    ],
+    "backend": [
+      "Python (FastAPI)",
+      "Ruby on Rails",
+      "PHP",
+      "Go",
+      "Java"
+    ],
+    "infrastructure": [
+      "AWS",
+      "GCP",
+      "Terraform",
+      "Firebase"
+    ],
+    "ai": [
+      "OpenAI",
+      "LangSmith",
+      "promptfoo"
+    ]
+  },
+  "selfPR": {
+    "summary": "学生時代にHTML/CSS、JavaScript、VBAを学び、プログラマーとしてキャリアを開始しました。",
+    "strengths": [
+      "サーバーサイド、フロントエンド、スマホアプリまで幅広く対応できます。",
+      "リーダー経験を活かし、設計・スケジュール・育成を含むポジションでの参画が可能です。",
+      "請負案件を多くこなしてきたため、一般的なSESの方より、作り切る能力、問題点を明確にし解決に導く能力はあります。"
+    ]
+  },
+  "projects": [
+    {
+      "id": 1,
+      "name": "賃貸物件管理システム",
+      "period": {
+        "start": "2005/08",
+        "end": "2006/03"
+      },
+      "monthCount": 8,
+      "teamSize": 3,
+      "technologies": [
+        "Visual Basic 6",
+        "Visual Basic .NET",
+        "Windows",
+        "Windows API"
+      ],
+      "description": "不動産業務・事務・営業支援システム（自社パッケージ）の改修。\n既存製品のVB6からVB.NETへの移行。\n賃貸物件の空室状況、クリーニング状況、家賃支払いなどの検索・管理など開発。",
+      "role": "PG"
+    },
+    {
+      "id": 2,
+      "name": "不動産物件検索サイト",
+      "period": {
+        "start": "2006/04",
+        "end": "2006/07"
+      },
+      "monthCount": 4,
+      "teamSize": 2,
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Perl"
+      ],
+      "description": "Home'sのような不動産サイト。自社サービス。\n地図検索で地域ごとの不動産が閲覧できる機能の追加。",
+      "role": "PG"
+    },
+    {
+      "id": 3,
+      "name": "自社社員向け事務処理管理WEB",
+      "period": {
+        "start": "2006/08",
+        "end": "2006/10"
+      },
+      "monthCount": 3,
+      "teamSize": 3,
+      "technologies": [
+        "Java",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Struts",
+        "Spring",
+        "Hibernaite",
+        "JDBC",
+        "JSP",
+        "prototype.js"
+      ],
+      "description": "事務経費手続き・勤怠管理などの自社社員向けWEBシステム。\n開発と実際の運用、QAとりまとめ、引き継ぎ。",
+      "role": "PG"
+    },
+    {
+      "id": 4,
+      "name": "全国自治体向け防災管理システム",
+      "period": {
+        "start": "2006/11",
+        "end": "2007/05"
+      },
+      "monthCount": 7,
+      "teamSize": 25,
+      "technologies": [
+        "Java",
+        "C++",
+        "C",
+        "Swing",
+        "Thread",
+        "Socket",
+        "Jasper Report",
+        "Windows API"
+      ],
+      "description": "災害発生時マルチキャスト配信による即時情報送信システム。客先打ち合わせとドキュメント作成。衛星通信端末など各装置との電文送受信IF、電文解析、マルチキャスト配信、JavaSwingによるUI構築、PDFレポート出力部分の実装を主に担当。",
+      "role": "SE"
+    },
+    {
+      "id": 5,
+      "name": "自社社員専用事務処理管理WEB(２回目)／新人研修講師",
+      "period": {
+        "start": "2007/06",
+        "end": "2007/07"
+      },
+      "monthCount": 2,
+      "teamSize": 2,
+      "technologies": [
+        "Java",
+        "Excel",
+        "Struts",
+        "Spring",
+        "Hibernaite",
+        "JDBC",
+        "JSP",
+        "JavaScript",
+        "jQuery",
+        "prototype.js"
+      ],
+      "description": "EXCEL勤怠入力シートのマクロを改修、残業代計算機能の追加。新人教育の手伝い。",
+      "role": ""
+    },
+    {
+      "id": 6,
+      "name": "空港向け滑走路設備監視制御システム",
+      "period": {
+        "start": "2007/08",
+        "end": "2007/08"
+      },
+      "monthCount": 1,
+      "teamSize": 15,
+      "technologies": [
+        "Java",
+        "C"
+      ],
+      "description": "CからJavaへの段階的な移行PJの一部。C言語からJavaへの電文送受信IFの開発。",
+      "role": "PG"
+    },
+    {
+      "id": 7,
+      "name": "社内事務向け企業管理パッケージ",
+      "period": {
+        "start": "2007/09",
+        "end": "2007/09"
+      },
+      "monthCount": 1,
+      "teamSize": 10,
+      "technologies": [
+        "PL/SQL",
+        "Java",
+        "SAStruts",
+        "JSF",
+        "JavaScript",
+        "jQuery"
+      ],
+      "description": "企業・社員管理パッケージの退職金管理部分の開発。",
+      "role": "PG"
+    },
+    {
+      "id": 8,
+      "name": "建築業務　支援・管理WEBシステム",
+      "period": {
+        "start": "2007/10",
+        "end": "2007/12"
+      },
+      "monthCount": 3,
+      "teamSize": 15,
+      "technologies": [
+        "Java",
+        "HTML/CSS",
+        "JavaScript",
+        "Spring",
+        "iBATIS",
+        "jQuery"
+      ],
+      "description": "新築住宅の工事進捗管理･閲覧WEBシステム。\n実際の業務フローをWEBで実現するための開発。\n対象の住宅を購入したお客様へ提供するためのWEBページを開発。",
+      "role": "SE"
+    },
+    {
+      "id": 9,
+      "name": "店頭社員向け航空券予約販売WEBシステム",
+      "period": {
+        "start": "2008/01",
+        "end": "2008/03"
+      },
+      "monthCount": 3,
+      "teamSize": 15,
+      "technologies": [
+        "Java",
+        "HTML/CSS",
+        "JavaScript",
+        "COBOL",
+        "Struts",
+        "Hibernaite",
+        "独自ORM",
+        "jQuery"
+      ],
+      "description": "旅行代理店の店頭で航空券の状況･値段等を検索するWEBシステム。\n既存DB(AS400)からの電文をJavaのクラスに変換してORMのように利用するライブラリの実装。",
+      "role": "SE"
+    },
+    {
+      "id": 10,
+      "name": "高度視聴映像配信WEBシステム",
+      "period": {
+        "start": "2008/04",
+        "end": "2009/05"
+      },
+      "monthCount": 14,
+      "teamSize": 30,
+      "technologies": [
+        "Java",
+        "HTML/CSS",
+        "BML",
+        "JavaScript",
+        "Spring",
+        "Hibernaite",
+        "DJUnit",
+        "JMeter",
+        "jQuery"
+      ],
+      "description": "地デジ対応テレビ専用映像配信サービス(端末含む)のサーバ側開発。映像のレコメンド機能、お気に入り機能、レジューム機能の実装。テレビと携帯電話でのユーザ情報、映像などの連携。",
+      "role": "SE"
+    },
+    {
+      "id": 11,
+      "name": "ECサイト運営者向け運用ツール",
+      "period": {
+        "start": "2009/05",
+        "end": "2009/07"
+      },
+      "monthCount": 3,
+      "teamSize": 1,
+      "technologies": [
+        "Java",
+        "HTML/CSS",
+        "JavaScript",
+        "Spring",
+        "Hibernaite",
+        "jQuery",
+        "Excel",
+        "VBA"
+      ],
+      "description": "ECサイトの商品データ管理、運用ツール開発。\n商品投稿をサポートするようなコピペなどを作成。\n投稿から1週間たったところで通知がくるなどの機能。",
+      "role": "SE"
+    },
+    {
+      "id": 12,
+      "name": "社員向け販売管理システム",
+      "period": {
+        "start": "2009/08",
+        "end": "2009/09"
+      },
+      "monthCount": 2,
+      "teamSize": 4,
+      "technologies": [
+        "Java",
+        "PowerBuilder",
+        "Spring"
+      ],
+      "description": "既存システムの改修。COBOL→Javaへの変換。画面サンプル実装、バッチ。",
+      "role": "SE"
+    },
+    {
+      "id": 13,
+      "name": "SNSモバイルサイト開発",
+      "period": {
+        "start": "2009/10",
+        "end": "2010/01"
+      },
+      "monthCount": 4,
+      "teamSize": 4,
+      "technologies": [
+        "PHP",
+        "Smarty",
+        "MediaWiki",
+        "WikipediaDB",
+        "Mecab",
+        "IPAdic"
+      ],
+      "description": "SNSモバイルサイト新規開発。当時流行していた占い師をキャラクターとしたサイトのサブサイト。",
+      "role": "SE"
+    },
+    {
+      "id": 14,
+      "name": "保険設計・申込シミュレーションシステム",
+      "period": {
+        "start": "2010/02",
+        "end": "2011/02"
+      },
+      "monthCount": 13,
+      "teamSize": 15,
+      "technologies": [
+        "Java",
+        "Flex3",
+        "Spring",
+        "Apex",
+        "Flex",
+        "VisualForce",
+        "PDF",
+        "AdobeAcrobat",
+        "iText"
+      ],
+      "description": "SalesForce上の画面作成及び、保険シミュレーション画面(Flex)とJAVAの連携処理、帳票出力機能の開発。",
+      "role": "SE"
+    },
+    {
+      "id": 15,
+      "name": "URLフィルタリングパッケージソフト",
+      "period": {
+        "start": "2011/03",
+        "end": "2011/12"
+      },
+      "monthCount": 10,
+      "teamSize": 10,
+      "technologies": [
+        "Java",
+        "Shell",
+        "Spring",
+        "Spring Batch",
+        "DRBD",
+        "Heartbeat",
+        "PaceMaker"
+      ],
+      "description": "URLフィルタリングパッケージソフトの管理画面、及び、フィルタリング基幹部分、集計バッチ、運用。",
+      "role": "SE"
+    },
+    {
+      "id": 16,
+      "name": "PUSH通知管理・送信サービス",
+      "period": {
+        "start": "2012/01",
+        "end": "2012/04"
+      },
+      "monthCount": 4,
+      "teamSize": 3,
+      "technologies": [
+        "Java",
+        "JavaScript",
+        "Objective-C",
+        "Android Java",
+        "SAStruts"
+      ],
+      "description": "WEB画面ベースのPUSH通知管理画面。アプリに組み込むPUSH通知送信サービス。",
+      "role": "SE"
+    },
+    {
+      "id": 17,
+      "name": "スマホ向けゲームプラットフォーム開発",
+      "period": {
+        "start": "2012/01",
+        "end": "2012/04"
+      },
+      "monthCount": 4,
+      "teamSize": 3,
+      "technologies": [
+        "Android Java",
+        "Action Script",
+        "Java",
+        "Spring",
+        "Adobe AIR"
+      ],
+      "description": "ゲーム配信プラットフォームの開発。LINEゲームのようなもの。\nAndroid向けホームアプリの機能追加を担当｡\nAIRアプリケーションでゲーム進捗を記録する機能のプロト。",
+      "role": "SE"
+    },
+    {
+      "id": 18,
+      "name": "ライフプラン・保険設計シミュレーションシステム",
+      "period": {
+        "start": "2012/05",
+        "end": "2012/11"
+      },
+      "monthCount": 7,
+      "teamSize": 30,
+      "technologies": [
+        "Java",
+        "HTML/CSS",
+        "JavaScript",
+        "お客様提供FW（Spring",
+        "Strutsベース）",
+        "Hibernate",
+        "Dojo",
+        "JFreeChart",
+        "iText",
+        "Adobe Acrobat Pro"
+      ],
+      "description": "保険営業員が保険商品を紹介する際にPC・タブレット端末を利用してプレゼンするためのアプリケーション。窓口での簡易計算から、FPが作るようなライフプランシミュレーションの表やグラフを表示。",
+      "role": "SE"
+    },
+    {
+      "id": 19,
+      "name": "スマホ向けブラウザゲーム開発",
+      "period": {
+        "start": "2012/01",
+        "end": "2014/03"
+      },
+      "monthCount": 27,
+      "teamSize": 20,
+      "technologies": [
+        "Java",
+        "HTML/CSS",
+        "JavaScript",
+        "Spring",
+        "独自ORM",
+        "Python",
+        "Flask",
+        "（管理画面）",
+        "独自ゲームボット",
+        "nginx"
+      ],
+      "description": "ブラウザ向けソーシャルゲームの開発。サーバメインで、フロントも担当。",
+      "role": "SE"
+    },
+    {
+      "id": 20,
+      "name": "iOS向けニュースアプリ",
+      "period": {
+        "start": "2014/04",
+        "end": "2014/06"
+      },
+      "monthCount": 3,
+      "teamSize": 2,
+      "technologies": [
+        "Objective-C",
+        "Python",
+        "JavaScript",
+        "Pyramid",
+        "Redis",
+        "AFNetworking",
+        "Realm",
+        "SDWebImage",
+        "AngularJS",
+        "CoffeeScript"
+      ],
+      "description": "iOS向けニュース配信アプリとCMSの開発。サーバ、フロントを担当。",
+      "role": "SE"
+    },
+    {
+      "id": 21,
+      "name": "iOS,Android向け地図アプリ",
+      "period": {
+        "start": "2014/07",
+        "end": "2014/12"
+      },
+      "monthCount": 6,
+      "teamSize": 6,
+      "technologies": [
+        "Objective-C",
+        "PHP",
+        "JavaScript",
+        "Laravel4",
+        "Redis",
+        "AngularJS",
+        "CoffeeScript",
+        "iOS",
+        "GPS",
+        "OpenGL"
+      ],
+      "description": "iOS,Android向けの地図・GPSを使ったクローズドな待ち合わせアプリ。iOSとサーバサイドを担当。",
+      "role": "SE"
+    },
+    {
+      "id": 22,
+      "name": "Android向けクーポンアプリ",
+      "period": {
+        "start": "2015/01",
+        "end": "2015/05"
+      },
+      "monthCount": 5,
+      "teamSize": 6,
+      "technologies": [
+        "Objective-C",
+        "PHP",
+        "JavaScript",
+        "Laravel4",
+        "Redis",
+        "AngularJS",
+        "CoffeeScript",
+        "iOS",
+        "GPS",
+        "OpenGL"
+      ],
+      "description": "Android向け電子クーポン、レシート発行アプリ。サーバサイドとアプリの一部を担当。",
+      "role": "SE"
+    },
+    {
+      "id": 23,
+      "name": "iOS向けニュースアプリ",
+      "period": {
+        "start": "2015/06",
+        "end": "2016/11"
+      },
+      "monthCount": 18,
+      "teamSize": 6,
+      "technologies": [
+        "Objective-C",
+        "PHP",
+        "JavaScript",
+        "Python",
+        "Pyramid",
+        "Redis",
+        "AFNetworking",
+        "Realm",
+        "SDWebImage",
+        "AngularJS"
+      ],
+      "description": "iOS向けニュース配信アプリとCMSの開発。サーバサイドとフロントエンドを担当。英語音声の再生などの機能。\nNo.20からの改修案件です。",
+      "role": "SE"
+    },
+    {
+      "id": 24,
+      "name": "Android/iOS向けオンラインゲーム開発",
+      "period": {
+        "start": "2016/12",
+        "end": "2017/04"
+      },
+      "monthCount": 5,
+      "teamSize": 20,
+      "technologies": [
+        "Java",
+        "JavaScript",
+        "Spring",
+        "Redis",
+        "AngularJS",
+        "CoffeeScript",
+        "SASS"
+      ],
+      "description": "Android/iOS向けオンラインストラテジー系ゲームアプリとサーバAPI、CMSの開発。サーバサイドを主に担当。",
+      "role": "SE"
+    },
+    {
+      "id": 25,
+      "name": "求人検索サイト開発",
+      "period": {
+        "start": "2017/05",
+        "end": "2018/08"
+      },
+      "monthCount": 16,
+      "teamSize": 18,
+      "technologies": [
+        "Ruby on Rails",
+        "JavaScript",
+        "Ruby",
+        "Vue.js",
+        "CoffeeScript",
+        "SASS",
+        "Redis",
+        "Google Analytics",
+        "Crashlytics",
+        "Repro"
+      ],
+      "description": "医療・介護に特化した求人WEBサイト、iOS/Androidアプリ開発。",
+      "role": "SE"
+    },
+    {
+      "id": 26,
+      "name": "大規模ネットワークのログ収集基盤構築",
+      "period": {
+        "start": "2018/01",
+        "end": "2018/04"
+      },
+      "monthCount": 4,
+      "teamSize": 10,
+      "technologies": [
+        "Elasticsearch",
+        "Ruby",
+        "Elastic",
+        "Logstash",
+        "Kibana",
+        "FileBeats",
+        "WireShark",
+        "i-Filter",
+        "Kaspersky",
+        "Juniper"
+      ],
+      "description": "既存フィルタリングソフトのログをElasticsearchに取り込むためのサーバ設置から基盤構築開発を担当。ログの解析を含めた基本設計から、Elasticsearchの初期構築、logstashによるログのフォーマット、Kibanaによるデータの可視化を主に実装。",
+      "role": "SE"
+    },
+    {
+      "id": 27,
+      "name": "製薬商品プレゼンテーションアプリのページ作成",
+      "period": {
+        "start": "2018/06",
+        "end": "2018/09"
+      },
+      "monthCount": 4,
+      "teamSize": 10,
+      "technologies": [
+        "HTML/CSS",
+        "JavaScript",
+        "jQuery",
+        "GreenSock",
+        "SASS"
+      ],
+      "description": "HTMLページを静的・動的にプレゼンテーションとして利用するための業務用iPadアプリ。",
+      "role": "SE"
+    },
+    {
+      "id": 28,
+      "name": "ネットワーク機器統合管理Webシステム",
+      "period": {
+        "start": "2018/12",
+        "end": "2019/09"
+      },
+      "monthCount": 10,
+      "teamSize": 15,
+      "technologies": [
+        "Python",
+        "HTML/CSS",
+        "JavaScript",
+        "Django",
+        "Gulp",
+        "jQuery",
+        "GreenSock",
+        "Ansible",
+        "Vagrant",
+        "Net-LD"
+      ],
+      "description": "某社ネットワーク機器のコンフィグ、OSインストールなど定常業務を管理するWebシステムの開発。管理画面から入力した内容を元に、数百台に対してAnsibleによるNWコマンド実行を行う。",
+      "role": "SE"
+    },
+    {
+      "id": 29,
+      "name": "薬剤プレゼンテーションWebシステム",
+      "period": {
+        "start": "2019/10",
+        "end": "2020/01"
+      },
+      "monthCount": 4,
+      "teamSize": 4,
+      "technologies": [
+        "Go",
+        "HTML/CSS",
+        "JavaScript",
+        "gin",
+        "jQuery",
+        "GreenSock",
+        "Gulp",
+        "SASS"
+      ],
+      "description": "薬剤のプレゼンテーション、顧客にアンケートをとる際の営業ツールとしてのiPhoneX向けWebサイト。",
+      "role": "SE"
+    },
+    {
+      "id": 30,
+      "name": "官公庁／地方自治体ドキュメント検索WEBシステム",
+      "period": {
+        "start": "2019/10",
+        "end": "2020/05"
+      },
+      "monthCount": 8,
+      "teamSize": 6,
+      "technologies": [
+        "PHP",
+        "Python",
+        "JavaScript",
+        "Laravel",
+        "scrapy",
+        "AWS",
+        "AWS Batch",
+        "serverless",
+        "AI",
+        "PDF/画像認識"
+      ],
+      "description": "官公庁、自治体等の資料（PDFドキュメント、CSV、WEBページ等）をスクレイピング、全文検索を可能とするシステム。スタートアップ企業の支援。",
+      "role": "SE"
+    },
+    {
+      "id": 31,
+      "name": "地域特化型ブログのCMS・アプリ",
+      "period": {
+        "start": "2020/06",
+        "end": "2020/08"
+      },
+      "monthCount": 3,
+      "teamSize": 4,
+      "technologies": [
+        "PHP",
+        "JavaScript",
+        "Laravel",
+        "Vue.js",
+        "SASS",
+        "HTML"
+      ],
+      "description": "有料ブログの記事管理、課金(クレジットカード、iOS月額課金)、Wordpressライクな記事入力画面",
+      "role": "SE"
+    },
+    {
+      "id": 32,
+      "name": "自動問診アプリの研究・技術検証",
+      "period": {
+        "start": "2020/08",
+        "end": "2020/09"
+      },
+      "monthCount": 2,
+      "teamSize": 4,
+      "technologies": [
+        "Laravel",
+        "Vue.js",
+        "MySQL"
+      ],
+      "description": "従来型 Web フレームワークでの開発。管理画面、API、バッチ処理を実装。",
+      "role": "SE"
+    },
+    {
+      "id": 33,
+      "name": "婚活マッチングアプリの開発",
+      "period": {
+        "start": "2020/12",
+        "end": "2022/02"
+      },
+      "monthCount": 15,
+      "teamSize": 4,
+      "technologies": [
+        "React Native",
+        "TypeScript"
+      ],
+      "description": "既存 React Native アプリのパフォーマンス改善。Re-render 最適化、遅延ロード導入。",
+      "role": "SE"
+    },
+    {
+      "id": 34,
+      "name": "全国連・県連・自治体向けのイベント・セミナー開催管理WEBシステム",
+      "period": {
+        "start": "2023/09",
+        "end": "2023/11"
+      },
+      "monthCount": 3,
+      "teamSize": 3,
+      "technologies": [
+        "OpenAI",
+        "Python",
+        "FastAPI"
+      ],
+      "description": "OpenAI API を使用したカスタムチャットボット。ユースケースに合わせてプロンプト・評価ロジックを設計。",
+      "role": "SE"
+    },
+    {
+      "id": 35,
+      "name": "路線検索アプリ",
+      "period": {
+        "start": "2023/09",
+        "end": "2023/11"
+      },
+      "monthCount": 3,
+      "teamSize": 3,
+      "technologies": [
+        "Python",
+        "Elasticsearch",
+        "React"
+      ],
+      "description": "大規模データから洞察を引き出すダッシュボード開発。Elasticsearch でインデックス、React で可視化。",
+      "role": "SE"
+    },
+    {
+      "id": 36,
+      "name": "登山ツアー情報サイト",
+      "period": {
+        "start": "2023/10",
+        "end": "2024/01"
+      },
+      "monthCount": 4,
+      "teamSize": 3,
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS"
+      ],
+      "description": "デザインからリリースまで一貫して担当。Tailwind CSS でレスポンシブなUIを実装。",
+      "role": "SE"
+    },
+    {
+      "id": 37,
+      "name": "路線検索アプリ",
+      "period": {
+        "start": "2024/01",
+        "end": "2024/02"
+      },
+      "monthCount": 2,
+      "teamSize": 3,
+      "technologies": [
+        "Go",
+        "PostgreSQL",
+        "AWS"
+      ],
+      "description": "高速・スケーラブルなマイクロサービス API を Go で実装。AWS ECS 上でコンテナ実行。",
+      "role": "SE"
+    },
+    {
+      "id": 38,
+      "name": "就職エージェントサポートWebシステム",
+      "period": {
+        "start": "2024/04",
+        "end": "2024/11"
+      },
+      "monthCount": 8,
+      "teamSize": 3,
+      "technologies": [
+        "Ruby on Rails",
+        "PostgreSQL"
+      ],
+      "description": "レガシー COBOL システムの Rails への移行。データマイグレーション、テスト、トレーニング全てを担当。",
+      "role": "SE"
+    },
+    {
+      "id": 39,
+      "name": "複数SNSプラットフォーム向け動画投稿アプリ",
+      "period": {
+        "start": "2025/01",
+        "end": "2025/09"
+      },
+      "monthCount": 9,
+      "teamSize": 10,
+      "technologies": [
+        "Flutter",
+        "Firebase"
+      ],
+      "description": "フロントエンドは Flutter で iOS/Android 共通実装。バックエンドは Firebase を活用。",
+      "role": "SE"
+    },
+    {
+      "id": 39,
+      "name": "AI学習支援モバイルアプリ",
+      "period": {
+        "start": "2025/10",
+        "end": "2025/12"
+      },
+      "monthCount": 3,
+      "teamSize": 4,
+      "technologies": [
+        "Flutter",
+        "Firebase"
+      ],
+      "description": "フロントエンドは Flutter で iOS/Android 共通実装。バックエンドは Firebase を活用。",
+      "role": "SE"
+    },
+    {
+      "id": 39,
+      "name": "AI文書レビュープラットフォーム",
+      "period": {
+        "start": "2026/01",
+        "end": "2026/03"
+      },
+      "monthCount": 3,
+      "teamSize": 9,
+      "technologies": [
+        "Flutter",
+        "Firebase"
+      ],
+      "description": "フロントエンドは Flutter で iOS/Android 共通実装。バックエンドは Firebase を活用。",
+      "role": "SE"
+    }
+  ]
 }
