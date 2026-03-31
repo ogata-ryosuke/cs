@@ -26,8 +26,8 @@ const monthsCount = endYear
     ~
     {project.period.end ?? '現在'}
   </td>
-  <td class="px-lg py-md text-body text-text-secondary text-right">{monthsCount}</td>
-  <td class="px-lg py-md text-body text-text-primary font-medium">{project.name}</td>
+  <td class="px-lg py-md text-body text-text-secondary text-right whitespace-nowrap">{monthsCount}ヶ月</td>
+  <td class="px-lg py-md text-body text-text-primary font-medium whitespace-nowrap">{project.name}</td>
   <td class="px-lg py-md text-body text-text-secondary">
     <div class="flex gap-xs flex-wrap">
       {project.technologies.slice(0, 3).map(tech => (
