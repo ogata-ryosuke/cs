@@ -79,15 +79,15 @@
   .max-w-page {
     @apply px-sm;
   }
-  
+
   .hidden-mobile {
     @apply hidden;
   }
-  
+
   .text-header {
     @apply text-xl;
   }
-  
+
   .px-xl {
     @apply px-sm;
   }
@@ -97,15 +97,15 @@
   .text-sectionHeading {
     @apply text-lg;
   }
-  
+
   .pt-header {
     @apply pt-[64px];
   }
-  
+
   table {
     @apply text-sm;
   }
-  
+
   .w-skillsLabel {
     @apply w-[120px];
   }

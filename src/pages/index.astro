@@ -100,25 +100,12 @@ const careerData = data as CareerSheetData;
 </Layout>
 
 <script>
-  // Add technologies to project rows for filtering
+  // Accordion logic with chevron rotation
   const projectRows = document.querySelectorAll('.project-row');
   projectRows.forEach((row: Element) => {
-    const techElements = row.querySelectorAll('[class*="bg-tag"]');
-    const techs: string[] = [];
-    techElements.forEach(el => {
-      const text = el.textContent?.trim();
-      if (text && !text.startsWith('+')) {
-        techs.push(text);
-      }
-    });
-    row.setAttribute('data-techs', techs.join(','));
-  });
-
-  // Accordion logic with chevron rotation
-  projectRows.forEach((row: Element, idx: number) => {
     const projectId = row.getAttribute('data-project-id');
-    const detailRow = document.querySelector(`.project-detail[data-project-id="${projectId}"]`) as HTMLElement;
-    const chevron = row.querySelector(`.chevron-${projectId}`) as SVGElement;
+    const detailRow = document.querySelector(`.project-detail[data-project-id="${projectId}"]`);
+    const chevron = row.querySelector(`.chevron-${projectId}`);
 
     row.addEventListener('click', () => {
       if (detailRow) {
@@ -126,11 +113,11 @@ const careerData = data as CareerSheetData;
         if (isHidden) {
           detailRow.classList.remove('hidden');
           row.classList.add('bg-primary-50');
-          if (chevron) chevron.style.transform = 'rotate(90deg)';
+          if (chevron) (chevron as HTMLElement).style.transform = 'rotate(90deg)';
         } else {
           detailRow.classList.add('hidden');
           row.classList.remove('bg-primary-50');
-          if (chevron) chevron.style.transform = 'rotate(0deg)';
+          if (chevron) (chevron as HTMLElement).style.transform = 'rotate(0deg)';
         }
       }
     });

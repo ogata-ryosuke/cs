@@ -1,0 +1,13 @@
+# ビルド成果物・キャッシュ
+dist/
+.astro/
+node_modules/
+
+# ロックファイル（大きいため）
+package-lock.json
+
+# OS / IDE
+.DS_Store
+
+# ソースマップ
+*.map

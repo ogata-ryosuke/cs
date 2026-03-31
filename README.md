@@ -32,8 +32,8 @@ npm run build
 ```javascript
 export default defineConfig({
   integrations: [tailwind()],
-  site: 'https://username.github.io/carrer-sheet',
-  base: '/carrer-sheet',
+  site: "https://username.github.io/carrer-sheet",
+  base: "/carrer-sheet",
 });
 ```
 

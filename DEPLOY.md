@@ -28,6 +28,7 @@ git push origin main
 ```
 
 GitHub Actions が自動実行：
+
 - `.github/workflows/deploy.yml` が起動
 - npm install + npm run build 実行
 - 出力を `dist/` に生成
@@ -48,8 +49,8 @@ GitHub Actions が自動実行：
 export default defineConfig({
   integrations: [tailwind()],
   output: "static",
-  site: 'https://username.github.io/carrer-sheet',
-  base: '/carrer-sheet',
+  site: "https://username.github.io/carrer-sheet",
+  base: "/carrer-sheet",
 });
 ```
 
@@ -57,9 +58,9 @@ export default defineConfig({
 
 ## トラブルシューティング
 
-| 問題 | 原因 | 解決策 |
-|------|------|--------|
-| Pages が見つからない | GitHub Pages 設定なし | Settings → Pages で有効化 |
-| 404 エラー | アセットパスずれ | `base` と `site` を確認 |
-| CSS が読み込まれない | Tailwind ビルド失敗 | `npm run build` でローカル確認 |
-| アクション失敗 | ノードバージョン不一致 | node 20 で統一（.github/workflows/deploy.yml） |
+| 問題                 | 原因                   | 解決策                                         |
+| -------------------- | ---------------------- | ---------------------------------------------- |
+| Pages が見つからない | GitHub Pages 設定なし  | Settings → Pages で有効化                      |
+| 404 エラー           | アセットパスずれ       | `base` と `site` を確認                        |
+| CSS が読み込まれない | Tailwind ビルド失敗    | `npm run build` でローカル確認                 |
+| アクション失敗       | ノードバージョン不一致 | node 20 で統一（.github/workflows/deploy.yml） |

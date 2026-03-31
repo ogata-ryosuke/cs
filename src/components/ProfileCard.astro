@@ -13,7 +13,7 @@ const { profile } = Astro.props;
   
   {profile.github && (
     <a
-      href={`https://github.com/${profile.github}`}
+      href={profile.github}
       target="_blank"
       rel="noopener noreferrer"
       class="inline-flex items-center gap-sm text-body text-primary-600 hover:text-primary-700 font-medium"

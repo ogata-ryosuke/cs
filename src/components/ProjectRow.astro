@@ -7,24 +7,24 @@ interface Props {
 }
 
 const { project, index } = Astro.props;
-const monthsCount = project.period.end ? 
-  Math.round((new Date(project.period.end).getTime() - new Date(project.period.start).getTime()) / (1000 * 60 * 60 * 24 * 30.44)) 
+const [startYear, startMonth] = project.period.start.split('/').map(Number);
+const [endYear, endMonth] = project.period.end ? project.period.end.split('/').map(Number) : [null, null];
+const monthsCount = endYear
+  ? (endYear - startYear) * 12 + (endMonth - startMonth + 1)
   : '進行中';
 ---
 
-<tr class="hover:bg-bg-section transition project-row cursor-pointer" data-project-id={index} data-index={index}>
+<tr class="hover:bg-bg-section transition project-row cursor-pointer" data-project-id={project.id} data-techs={project.technologies.join(',')}>
   <td class="px-lg py-md text-body text-text-secondary text-center">
-    <svg class="w-5 h-5 inline-block transform transition-transform" style="transform: rotate(0deg);" class:list={['chevron', `chevron-${index}`]}>
+    <svg class:list={['w-5 h-5 inline-block transform transition-transform chevron', `chevron-${project.id}`]} style="transform: rotate(0deg);">
       <path fill="currentColor" d="M8.293 10.293a1 1 0 011.414 0L10 11.586l.293-.293a1 1 0 111.414 1.414l-1.42 1.42a1 1 0 01-1.414 0l-1.42-1.42a1 1 0 010-1.414z"></path>
     </svg>
   </td>
   <td class="px-lg py-md text-body text-text-secondary">{index}</td>
-  <td class="px-lg py-md text-body text-text-secondary text-nowrap">
-    {new Date(project.period.start).toLocaleDateString('ja-JP', { year: '2-digit', month: '2-digit' })}
+  <td class="px-lg py-md text-body text-text-secondary whitespace-nowrap">
+    {project.period.start}
     ~
-    {project.period.end 
-      ? new Date(project.period.end).toLocaleDateString('ja-JP', { year: '2-digit', month: '2-digit' })
-      : '現在'}
+    {project.period.end ?? '現在'}
   </td>
   <td class="px-lg py-md text-body text-text-secondary text-right">{monthsCount}</td>
   <td class="px-lg py-md text-body text-text-primary font-medium">{project.name}</td>
@@ -44,7 +44,7 @@ const monthsCount = project.period.end ?
 </tr>
 
 {/* Expanded row (hidden by default, shown via JavaScript) */}
-<tr class="project-detail hidden" data-project-id={index}>
+<tr class="project-detail hidden" data-project-id={project.id}>
   <td colspan="6" class="px-lg py-md bg-primary-50">
     <div class="space-y-sm">
       <div>
