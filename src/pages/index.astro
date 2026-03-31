@@ -114,17 +114,23 @@ const careerData = data as CareerSheetData;
     row.setAttribute('data-techs', techs.join(','));
   });
 
-  // Accordion logic
-  projectRows.forEach((row: Element) => {
-    row.addEventListener('click', () => {
-      const projectId = row.getAttribute('data-project-id');
-      const detailRow = document.querySelector(`.project-detail[data-project-id="${projectId}"]`) as HTMLElement;
+  // Accordion logic with chevron rotation
+  projectRows.forEach((row: Element, idx: number) => {
+    const projectId = row.getAttribute('data-project-id');
+    const detailRow = document.querySelector(`.project-detail[data-project-id="${projectId}"]`) as HTMLElement;
+    const chevron = row.querySelector(`.chevron-${projectId}`) as SVGElement;
 
+    row.addEventListener('click', () => {
       if (detailRow) {
-        if (detailRow.classList.contains('hidden')) {
+        const isHidden = detailRow.classList.contains('hidden');
+        if (isHidden) {
           detailRow.classList.remove('hidden');
+          row.classList.add('bg-primary-50');
+          if (chevron) chevron.style.transform = 'rotate(90deg)';
         } else {
           detailRow.classList.add('hidden');
+          row.classList.remove('bg-primary-50');
+          if (chevron) chevron.style.transform = 'rotate(0deg)';
         }
       }
     });

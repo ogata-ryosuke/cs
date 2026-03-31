@@ -12,7 +12,12 @@ const monthsCount = project.period.end ?
   : '進行中';
 ---
 
-<tr class="hover:bg-bg-section transition project-row" data-project-id={index}>
+<tr class="hover:bg-bg-section transition project-row cursor-pointer" data-project-id={index} data-index={index}>
+  <td class="px-lg py-md text-body text-text-secondary text-center">
+    <svg class="w-5 h-5 inline-block transform transition-transform" style="transform: rotate(0deg);" class:list={['chevron', `chevron-${index}`]}>
+      <path fill="currentColor" d="M8.293 10.293a1 1 0 011.414 0L10 11.586l.293-.293a1 1 0 111.414 1.414l-1.42 1.42a1 1 0 01-1.414 0l-1.42-1.42a1 1 0 010-1.414z"></path>
+    </svg>
+  </td>
   <td class="px-lg py-md text-body text-text-secondary">{index}</td>
   <td class="px-lg py-md text-body text-text-secondary text-nowrap">
     {new Date(project.period.start).toLocaleDateString('ja-JP', { year: '2-digit', month: '2-digit' })}
