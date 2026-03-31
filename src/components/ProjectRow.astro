@@ -1,0 +1,61 @@
+---
+import type { Project } from '@/lib/types';
+
+interface Props {
+  project: Project;
+  index: number;
+}
+
+const { project, index } = Astro.props;
+const monthsCount = project.period.end ? 
+  Math.round((new Date(project.period.end).getTime() - new Date(project.period.start).getTime()) / (1000 * 60 * 60 * 24 * 30.44)) 
+  : '進行中';
+---
+
+<tr class="hover:bg-bg-section transition project-row" data-project-id={index}>
+  <td class="px-lg py-md text-body text-text-secondary">{index}</td>
+  <td class="px-lg py-md text-body text-text-secondary text-nowrap">
+    {new Date(project.period.start).toLocaleDateString('ja-JP', { year: '2-digit', month: '2-digit' })}
+    ~
+    {project.period.end 
+      ? new Date(project.period.end).toLocaleDateString('ja-JP', { year: '2-digit', month: '2-digit' })
+      : '現在'}
+  </td>
+  <td class="px-lg py-md text-body text-text-secondary text-right">{monthsCount}</td>
+  <td class="px-lg py-md text-body text-text-primary font-medium">{project.name}</td>
+  <td class="px-lg py-md text-body text-text-secondary">
+    <div class="flex gap-xs flex-wrap">
+      {project.technologies.slice(0, 3).map(tech => (
+        <span class="inline-block px-sm py-xs rounded bg-tag-unselected-bg text-tag-unselected-text text-small">
+          {tech}
+        </span>
+      ))}
+      {project.technologies.length > 3 && (
+        <span class="text-small text-text-tertiary">+{project.technologies.length - 3}</span>
+      )}
+    </div>
+  </td>
+  <td class="px-lg py-md text-body text-text-secondary">{project.teamSize}</td>
+</tr>
+
+{/* Expanded row (hidden by default, shown via JavaScript) */}
+<tr class="project-detail hidden" data-project-id={index}>
+  <td colspan="6" class="px-lg py-md bg-primary-50">
+    <div class="space-y-sm">
+      <div>
+        <h4 class="text-subheading text-text-primary font-semibold mb-sm">概要</h4>
+        <p class="text-body text-text-secondary leading-relaxed">{project.description}</p>
+      </div>
+      <div>
+        <h4 class="text-subheading text-text-primary font-semibold mb-sm">使用技術</h4>
+        <div class="flex gap-xs flex-wrap">
+          {project.technologies.map(tech => (
+            <span class="inline-block px-sm py-xs rounded bg-tag-unselected-bg text-tag-unselected-text text-small">
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </td>
+</tr>

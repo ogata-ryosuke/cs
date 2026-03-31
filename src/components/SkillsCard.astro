@@ -1,0 +1,26 @@
+---
+import type { SkillsData } from '@/lib/types';
+
+interface Props {
+  skills: SkillsData;
+}
+
+const { skills } = Astro.props;
+---
+
+<div class="bg-bg-surface border border-border-light rounded-card overflow-hidden">
+  <table class="w-full">
+    <tbody class="divide-y divide-border-light">
+      {Object.entries(skills).map(([category, techList]) => (
+        <tr class="hover:bg-bg-section transition">
+          <td class="px-lg py-md bg-bg-section font-semibold text-body text-text-primary w-skillsLabel">
+            {category}
+          </td>
+          <td class="px-lg py-md text-body text-text-secondary">
+            <p>{techList.join(', ')}</p>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

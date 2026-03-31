@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom utilities */
+@layer utilities {
+  .gap-xs {
+    @apply gap-[8px];
+  }
+  .gap-sm {
+    @apply gap-[12px];
+  }
+  .gap-md {
+    @apply gap-[16px];
+  }
+  .gap-lg {
+    @apply gap-[24px];
+  }
+  .gap-xl {
+    @apply gap-[48px];
+  }
+
+  .px-xs {
+    @apply px-[8px];
+  }
+  .px-xl {
+    @apply px-[48px];
+  }
+
+  .py-xs {
+    @apply py-[8px];
+  }
+
+  .w-10 {
+    @apply w-[40px];
+  }
+  .w-14 {
+    @apply w-[56px];
+  }
+  .w-22 {
+    @apply w-[88px];
+  }
+  .w-34 {
+    @apply w-[136px];
+  }
+  .w-44 {
+    @apply w-[176px];
+  }
+  .w-skillsLabel {
+    @apply w-[168px];
+  }
+
+  .pt-header {
+    @apply pt-[56px];
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}

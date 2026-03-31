@@ -1,0 +1,19 @@
+---
+interface Props {
+  label: string;
+  isSelected?: boolean;
+}
+
+const { label, isSelected = false } = Astro.props;
+---
+
+<button
+  class:list={[
+    'inline-block px-sm py-xs rounded transition',
+    isSelected
+      ? 'bg-tag-selected-bg text-tag-selected-text'
+      : 'bg-tag-unselected-bg text-tag-unselected-text hover:bg-white border border-border-light',
+  ]}
+>
+  {label}
+</button>

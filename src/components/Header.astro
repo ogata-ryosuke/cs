@@ -1,0 +1,21 @@
+---
+interface Props {
+  updateDate: string;
+}
+
+const { updateDate } = Astro.props;
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 h-header bg-bg-surface border-b border-border-light">
+  <div class="max-w-page mx-auto px-xl h-full flex items-center justify-between">
+    {/* Left: Title */}
+    <div class="flex items-center gap-md">
+      <h1 class="text-header text-text-primary font-bold">職務経歴書</h1>
+      <div class="w-px h-6 bg-border-light"></div>
+      <p class="text-body text-text-secondary">Career Sheet</p>
+    </div>
+
+    {/* Right: Update Date */}
+    <p class="text-small text-text-tertiary">{updateDate}</p>
+  </div>
+</header>

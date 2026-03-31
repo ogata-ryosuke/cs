@@ -1,0 +1,108 @@
+---
+import type { Project } from '@/lib/types';
+import ProjectTable from './ProjectTable.astro';
+import TechTagBadge from './TechTagBadge.astro';
+
+interface Props {
+  projects: Project[];
+}
+
+const { projects } = Astro.props;
+
+// Get all unique technologies
+const allTechs = Array.from(new Set(projects.flatMap(p => p.technologies))).sort();
+---
+
+<div class="space-y-lg">
+  {/* Filter bar */}
+  <div class="bg-bg-surface border border-border-light rounded-card p-lg">
+    <div class="flex items-center gap-sm mb-sm">
+      <h3 class="text-subheading text-text-primary font-semibold">技術スタック</h3>
+      <span class="text-small text-text-tertiary">
+        <span id="filtered-count">{projects.length}</span> / {projects.length}
+      </span>
+    </div>
+
+    <div id="tech-filters" class="flex gap-xs flex-wrap">
+      <button
+        id="filter-all"
+        class="inline-block px-sm py-xs rounded bg-tag-selected-bg text-tag-selected-text transition"
+        data-filter="all"
+      >
+        すべて
+      </button>
+      {allTechs.map(tech => (
+        <button
+          class="tech-filter inline-block px-sm py-xs rounded bg-tag-unselected-bg text-tag-unselected-text hover:bg-white border border-border-light transition"
+          data-tech={tech}
+        >
+          {tech}
+        </button>
+      ))}
+    </div>
+  </div>
+
+  {/* Projects table */}
+  <ProjectTable projects={projects} />
+</div>
+
+<script>
+  // Filter logic
+  const filterAll = document.getElementById('filter-all');
+  const techFilters = document.querySelectorAll('.tech-filter');
+  const projectRows = document.querySelectorAll('.project-row');
+  const filteredCount = document.getElementById('filtered-count');
+
+  let selectedTechs: Set<string> = new Set();
+
+  function updateFilter() {
+    let visibleCount = 0;
+
+    projectRows.forEach((row: Element) => {
+      const techs = (row.getAttribute('data-techs') || '').split(',').filter(Boolean);
+      const isVisible =
+        selectedTechs.size === 0 ||
+        techs.some(tech => selectedTechs.has(tech));
+
+      if (isVisible) {
+        (row as HTMLElement).style.display = '';
+        visibleCount++;
+      } else {
+        (row as HTMLElement).style.display = 'none';
+      }
+    });
+
+    if (filteredCount) filteredCount.textContent = visibleCount.toString();
+  }
+
+  filterAll?.addEventListener('click', () => {
+    selectedTechs.clear();
+    techFilters.forEach((btn) => {
+      btn.classList.remove('bg-tag-selected-bg', 'text-tag-selected-text');
+      btn.classList.add('bg-tag-unselected-bg', 'text-tag-unselected-text');
+    });
+    filterAll?.classList.add('bg-tag-selected-bg', 'text-tag-selected-text');
+    updateFilter();
+  });
+
+  techFilters.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const tech = btn.getAttribute('data-tech');
+      if (!tech) return;
+
+      if (selectedTechs.has(tech)) {
+        selectedTechs.delete(tech);
+        btn.classList.remove('bg-tag-selected-bg', 'text-tag-selected-text');
+        btn.classList.add('bg-tag-unselected-bg', 'text-tag-unselected-text');
+      } else {
+        selectedTechs.add(tech);
+        btn.classList.add('bg-tag-selected-bg', 'text-tag-selected-text');
+        btn.classList.remove('bg-tag-unselected-bg', 'text-tag-unselected-text');
+      }
+
+      filterAll?.classList.remove('bg-tag-selected-bg', 'text-tag-selected-text');
+      filterAll?.classList.add('bg-tag-unselected-bg', 'text-tag-unselected-text');
+      updateFilter();
+    });
+  });
+</script>

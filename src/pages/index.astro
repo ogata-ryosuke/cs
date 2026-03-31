@@ -1,0 +1,132 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/Header.astro';
+import ProfileCard from '@/components/ProfileCard.astro';
+import SkillsCard from '@/components/SkillsCard.astro';
+import ProjectsSection from '@/components/ProjectsSection.astro';
+import TechTagBadge from '@/components/TechTagBadge.astro';
+import type { CareerSheetData } from '@/lib/types';
+import data from '@/lib/sample-data.json';
+
+const careerData = data as CareerSheetData;
+---
+
+<Layout title="職務経歴書 | Career Sheet">
+  {/* Header */}
+  <Header updateDate="2026年3月" />
+
+  {/* Main Content */}
+  <main class="pt-header">
+    <div class="max-w-page mx-auto px-xl py-xl space-y-xl">
+      {/* Profile Section */}
+      <section class="space-y-sm">
+        <h2 class="text-sectionHeading text-text-primary font-bold">プロフィール</h2>
+        <div class="h-px bg-border-light"></div>
+        <ProfileCard profile={careerData.profile} />
+      </section>
+
+      {/* Specialties Section */}
+      <section class="space-y-sm">
+        <h2 class="text-sectionHeading text-text-primary font-bold">得意分野</h2>
+        <div class="h-px bg-border-light"></div>
+        <div class="bg-bg-surface border border-border-light rounded-card p-lg space-y-sm">
+          {careerData.specialties.items.map(item => (
+            <div class="flex gap-sm items-start">
+              <svg class="w-4 h-4 text-icon-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <p class="text-body text-text-primary leading-relaxed flex-1">{item}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section class="space-y-sm">
+        <h2 class="text-sectionHeading text-text-primary font-bold">得意技術</h2>
+        <div class="h-px bg-border-light"></div>
+        <SkillsCard skills={careerData.skills} />
+      </section>
+
+      {/* Self-PR Section */}
+      <section class="space-y-sm">
+        <h2 class="text-sectionHeading text-text-primary font-bold">自己PR</h2>
+        <div class="h-px bg-border-light"></div>
+        <div class="bg-bg-surface border border-border-light rounded-card p-lg space-y-lg">
+          {/* Summary / Bio */}
+          <div class="space-y-sm">
+            <h3 class="text-subheading text-text-primary font-semibold">≪略歴≫</h3>
+            <p class="text-body text-text-primary leading-loose">{careerData.selfPR.summary}</p>
+            <ul class="space-y-xs text-body text-text-secondary leading-relaxed pl-sm">
+              <li>・1社目：自社サービス企業で業務システム開発を経験。</li>
+              <li>・2社目：ソフトウェアハウスでWeb系開発の基礎を習得。</li>
+              <li>・フリーランス：Web系を中心にSES・受託案件へ従事。</li>
+              <li>・3社目：アプリ〜APIサーバまで含む一括請負案件に従事。</li>
+              <li>・以降：受託案件を中心に、見積もりから開発・リリースまで一貫して担当。</li>
+            </ul>
+          </div>
+
+          {/* Strengths */}
+          <div class="space-y-sm pt-lg border-t border-bg-section">
+            <h3 class="text-subheading text-text-primary font-semibold">≪強み≫</h3>
+            <ul class="space-y-xs text-body text-text-secondary leading-relaxed pl-sm">
+              {careerData.selfPR.strengths.map(strength => (
+                <li>・{strength}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section class="space-y-sm">
+        <h2 class="text-sectionHeading text-text-primary font-bold">案件一覧</h2>
+        <div class="h-px bg-border-light"></div>
+        <p class="text-small text-text-secondary text-right">
+          ※
+          期間の近いまたは重なっているものは誤記ではなく、同一請負先からのあったり複数案件消化中であったりなどの事情がございます。
+        </p>
+        <ProjectsSection projects={careerData.projects} />
+      </section>
+    </div>
+  </main>
+
+  {/* Footer padding */}
+  <footer class="h-2xl"></footer>
+</Layout>
+
+<script>
+  // Add technologies to project rows for filtering
+  const projectRows = document.querySelectorAll('.project-row');
+  projectRows.forEach((row: Element) => {
+    const techElements = row.querySelectorAll('[class*="bg-tag"]');
+    const techs: string[] = [];
+    techElements.forEach(el => {
+      const text = el.textContent?.trim();
+      if (text && !text.startsWith('+')) {
+        techs.push(text);
+      }
+    });
+    row.setAttribute('data-techs', techs.join(','));
+  });
+
+  // Accordion logic
+  projectRows.forEach((row: Element) => {
+    row.addEventListener('click', () => {
+      const projectId = row.getAttribute('data-project-id');
+      const detailRow = document.querySelector(`.project-detail[data-project-id="${projectId}"]`) as HTMLElement;
+
+      if (detailRow) {
+        if (detailRow.classList.contains('hidden')) {
+          detailRow.classList.remove('hidden');
+        } else {
+          detailRow.classList.add('hidden');
+        }
+      }
+    });
+  });
+</script>

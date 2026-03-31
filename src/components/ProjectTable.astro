@@ -1,0 +1,30 @@
+---
+import type { Project } from '@/lib/types';
+import ProjectRow from './ProjectRow.astro';
+
+interface Props {
+  projects: Project[];
+}
+
+const { projects } = Astro.props;
+---
+
+<div class="bg-bg-surface border border-border-light rounded-card overflow-hidden">
+  <table class="w-full">
+    <thead class="bg-bg-section border-b border-border-light">
+      <tr>
+        <th class="px-lg py-md text-left text-small font-semibold text-text-primary w-10">#</th>
+        <th class="px-lg py-md text-left text-small font-semibold text-text-primary min-w-[100px]">期間</th>
+        <th class="px-lg py-md text-left text-small font-semibold text-text-primary w-14">月数</th>
+        <th class="px-lg py-md text-left text-small font-semibold text-text-primary flex-1">案件名</th>
+        <th class="px-lg py-md text-left text-small font-semibold text-text-primary flex-1">技術スタック</th>
+        <th class="px-lg py-md text-left text-small font-semibold text-text-primary min-w-[80px]">体制</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-border-light">
+      {projects.map((project, index) => (
+        <ProjectRow project={project} index={index + 1} />
+      ))}
+    </tbody>
+  </table>
+</div>
