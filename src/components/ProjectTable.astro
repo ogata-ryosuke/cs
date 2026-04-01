@@ -24,7 +24,7 @@ const { projects } = Astro.props;
     </thead>
     <tbody class="divide-y divide-border-light">
       {projects.map((project, index) => (
-        <ProjectRow project={project} index={index + 1} />
+        <ProjectRow project={project} index={project.id} />
       ))}
     </tbody>
   </table>

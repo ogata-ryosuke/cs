@@ -13,7 +13,7 @@ const careerData = data as CareerSheetData;
 
 <Layout title="職務経歴書 | Career Sheet">
   {/* Header */}
-  <Header updateDate="2026年3月" />
+  <Header updateDate="2026年4月" />
 
   {/* Main Content */}
   <main class="pt-header">
@@ -88,7 +88,7 @@ const careerData = data as CareerSheetData;
         <div class="h-px bg-border-light"></div>
         <p class="text-small text-text-secondary text-right">
           ※
-          期間の近いまたは重なっているものは誤記ではなく、同一請負先からのあったり複数案件消化中であったりなどの事情がございます。
+          一部期間の重複や近接している箇所がございますが、同一クライアントからの継続案件、または複数案件の並行稼働によるものであり、誤記ではございません。
         </p>
         <ProjectsSection projects={careerData.projects} />
       </section>
@@ -121,6 +121,34 @@ const careerData = data as CareerSheetData;
         }
       }
     });
+  });
+
+  // Toggle all details (expand/collapse all)
+  const toggleAllBtn = document.getElementById('toggle-all-details');
+  let allExpanded = false;
+
+  toggleAllBtn?.addEventListener('click', () => {
+    const details = document.querySelectorAll('.project-detail');
+    const rows = document.querySelectorAll('.project-row');
+    allExpanded = !allExpanded;
+
+    details.forEach((detail) => {
+      const pid = detail.getAttribute('data-project-id');
+      const row = document.querySelector(`.project-row[data-project-id="${pid}"]`);
+      const chevron = row?.querySelector(`.chevron-${pid}`);
+
+      if (allExpanded) {
+        detail.classList.remove('hidden');
+        row?.classList.add('bg-primary-50');
+        if (chevron) (chevron as HTMLElement).style.transform = 'rotate(90deg)';
+      } else {
+        detail.classList.add('hidden');
+        row?.classList.remove('bg-primary-50');
+        if (chevron) (chevron as HTMLElement).style.transform = 'rotate(0deg)';
+      }
+    });
+
+    toggleAllBtn.textContent = allExpanded ? 'すべて閉じる' : 'すべて開く';
   });
 
   // Technology expand/collapse handler

@@ -22,6 +22,11 @@ const sortedTechs = [
   ...project.technologies.filter(t => !trendingTechs.includes(t))
 ];
 
+// Split text fields into list items
+const descriptionItems = project.description?.split('\n').filter(Boolean) || [];
+const learningItems = project.learning?.split('\n').filter(Boolean) || [];
+const commentsItems = project.comments?.split('\n').filter(Boolean) || [];
+
 const displayTechs = sortedTechs.slice(0, 6); // 2 rows × 3 columns
 const collapsedTechs = sortedTechs.slice(6);
 const hasMoreTechs = collapsedTechs.length > 0;
@@ -64,7 +69,7 @@ const hasMoreTechs = collapsedTechs.length > 0;
       )}
     </div>
   </td>
-  <td class="px-lg py-md text-body text-text-secondary">{project.teamSize}</td>
+  <td class="px-lg py-md text-body text-text-secondary">{project.teamSize}人</td>
 </tr>
 
 {/* Expanded row (hidden by default, shown via JavaScript) */}
@@ -72,9 +77,27 @@ const hasMoreTechs = collapsedTechs.length > 0;
   <td colspan="7" class="px-lg py-md bg-primary-50">
     <div class="space-y-sm">
       <div>
-        <h4 class="text-subheading text-text-primary font-semibold mb-sm">概要</h4>
-        <p class="text-body text-text-secondary leading-relaxed">{project.description}</p>
+        <h4 class="text-subheading text-text-primary font-semibold mb-sm">担当業務</h4>
+        <ul class="list-disc list-inside text-body text-text-secondary leading-relaxed space-y-1">
+          {descriptionItems.map(item => <li>{item}</li>)}
+        </ul>
       </div>
+      {learningItems.length > 0 && (
+        <div>
+          <h4 class="text-subheading text-text-primary font-semibold mb-sm">業務で得た知見</h4>
+          <ul class="list-disc list-inside text-body text-text-secondary leading-relaxed space-y-1">
+            {learningItems.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
+      )}
+      {commentsItems.length > 0 && (
+        <div>
+          <h4 class="text-subheading text-text-primary font-semibold mb-sm">コメント</h4>
+          <ul class="list-disc list-inside text-body text-text-secondary leading-relaxed space-y-1">
+            {commentsItems.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
+      )}
       <div>
         <h4 class="text-subheading text-text-primary font-semibold mb-sm">使用技術</h4>
         <div class="flex gap-xs flex-wrap">

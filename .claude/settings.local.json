@@ -1,7 +1,14 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(git -C /Users/ppp/Documents/workspace/ours/carrer-sheet log --oneline -20)",
+      "Bash(node -e \":*)",
+      "Bash(git -C /Users/ppp/Documents/workspace/ours/carrer-sheet ls-files dist/)",
+      "Bash(git -C /Users/ppp/Documents/workspace/ours/carrer-sheet diff --name-only HEAD)",
+      "Bash(npm run:*)",
+      "Bash(node -e ':*)",
+      "Bash(git add:*)"
     ]
   }
 }

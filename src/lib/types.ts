@@ -31,7 +31,7 @@ export interface Project {
   frameworks?: string[];
   processPhases?: string[];
   tasks?: string[];
-  learning?: string[];
+  learning?: string;
   comments?: string;
 }
 
