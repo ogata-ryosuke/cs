@@ -116,11 +116,6 @@ export interface FilterBarProps {
   onTagClick: (tag: string) => void;
 }
 
-export interface TechTagBadgeProps {
-  tag: string;
-  isSelected?: boolean;
-}
-
 export interface ProjectTableProps {
   projects: Project[];
   expandedProjectId: number | null;

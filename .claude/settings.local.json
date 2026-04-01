@@ -8,7 +8,8 @@
       "Bash(git -C /Users/ppp/Documents/workspace/ours/carrer-sheet diff --name-only HEAD)",
       "Bash(npm run:*)",
       "Bash(node -e ':*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)"
     ]
   }
 }
