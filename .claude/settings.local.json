@@ -9,7 +9,12 @@
       "Bash(npm run:*)",
       "Bash(node -e ':*)",
       "Bash(git add:*)",
-      "Bash(git commit -m ':*)"
+      "Bash(git commit -m ':*)",
+      "Bash(git push:*)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('/Users/ppp/Documents/workspace/ours/carrer-sheet/src/lib/sample-data.json','utf8'\\)\\); console.log\\('Valid JSON'\\)\")",
+      "Bash(gh repo:*)",
+      "Bash(git commit:*)",
+      "Bash(git rm:*)"
     ]
   }
 }
