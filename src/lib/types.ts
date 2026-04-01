@@ -20,17 +20,8 @@ export interface Project {
   technologies: string[];
   teamSize: number;
   description?: string;
-  role?: string; // PG, SE, etc.
-  teamComposition?: {
-    total?: number;
-    development?: number;
-  };
-  languages?: string[];
-  databases?: string[];
-  serverOS?: string[];
-  frameworks?: string[];
-  processPhases?: string[];
-  tasks?: string[];
+  contractType?: "社員" | "SES" | "受託";
+  isLeader?: boolean;
   learning?: string;
   comments?: string;
 }

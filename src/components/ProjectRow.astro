@@ -27,8 +27,8 @@ const descriptionItems = project.description?.split('\n').filter(Boolean) || [];
 const learningItems = project.learning?.split('\n').filter(Boolean) || [];
 const commentsItems = project.comments?.split('\n').filter(Boolean) || [];
 
-const displayTechs = sortedTechs.slice(0, 6); // 2 rows × 3 columns
-const collapsedTechs = sortedTechs.slice(6);
+const displayTechs = sortedTechs.slice(0, 4);
+const collapsedTechs = sortedTechs.slice(4);
 const hasMoreTechs = collapsedTechs.length > 0;
 ---
 
@@ -45,7 +45,23 @@ const hasMoreTechs = collapsedTechs.length > 0;
     {project.period.end ?? '現在'}
   </td>
   <td class="px-lg py-md text-body text-text-secondary text-right whitespace-nowrap">{monthsCount}ヶ月</td>
-  <td class="px-lg py-md text-body text-text-primary font-medium whitespace-nowrap">{project.name}</td>
+  <td class="px-lg py-md text-body text-text-primary font-medium whitespace-nowrap">
+    <div>{project.name}</div>
+    <div class="flex gap-xs mt-xs">
+      {project.contractType === '社員' && (
+        <span class="inline-block px-xs py-0.5 rounded text-[10px] font-semibold bg-gray-100 text-gray-600 border border-gray-200">社員</span>
+      )}
+      {project.contractType === 'SES' && (
+        <span class="inline-block px-xs py-0.5 rounded text-[10px] font-semibold bg-purple-100 text-purple-700 border border-purple-200">SES</span>
+      )}
+      {project.contractType === '受託' && (
+        <span class="inline-block px-xs py-0.5 rounded text-[10px] font-semibold bg-green-100 text-green-700 border border-green-200">受託</span>
+      )}
+      {project.isLeader && (
+        <span class="inline-block px-xs py-0.5 rounded text-[10px] font-semibold bg-blue-100 text-blue-700 border border-blue-200">リーダー</span>
+      )}
+    </div>
+  </td>
   <td class="px-lg py-md text-body text-text-secondary">
     <div class="flex gap-xs flex-wrap items-center tech-container" data-tech-container={project.id}>
       {displayTechs.map(tech => (
@@ -55,7 +71,7 @@ const hasMoreTechs = collapsedTechs.length > 0;
       ))}
       {hasMoreTechs && (
         <>
-          <span class="tech-collapsed hidden" data-project-id={project.id}>
+          <span class="tech-collapsed hidden flex gap-xs flex-wrap" data-project-id={project.id}>
             {collapsedTechs.map(tech => (
               <span class="inline-block px-sm py-xs rounded bg-tag-unselected-bg text-tag-unselected-text text-small">
                 {tech}
