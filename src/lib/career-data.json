@@ -17,24 +17,23 @@
   "skills": {
     "frontend": [
       "Flutter",
-      "React Native",
       "React",
       "Next.js",
-      "JavaScript",
       "TypeScript"
     ],
     "backend": [
-      "Python (FastAPI)",
+      "Python",
       "Ruby on Rails",
       "PHP",
-      "Go",
+      "Kotlin",
       "Java"
     ],
     "infrastructure": [
       "AWS",
       "GCP",
       "Terraform",
-      "Firebase"
+      "Firebase",
+      "ELK Stack"
     ],
     "ai": [
       "OpenAI",
@@ -761,7 +760,7 @@
         "Laravel",
         "Vue.js",
         "SASS",
-        "HTML",
+        "HTML/CSS",
         "MySQL"
       ],
       "description": "有料ブログの記事管理\n課金機能（クレジットカード、iOS月額課金）\nWordpressライクな記事入力画面",
@@ -814,7 +813,6 @@
       "monthCount": 3,
       "teamSize": 3,
       "technologies": [
-        "OpenAI",
         "Python",
         "FastAPI",
         "MySQL"
@@ -951,6 +949,7 @@
         "Python",
         "FastAPI",
         "Firebase",
+        "OpenAI",
         "GCP",
         "PostgreSQL",
         "Firestore",
@@ -974,6 +973,7 @@
         "TypeScript",
         "Next.js",
         "React",
+        "OpenAI",
         "PostgreSQL",
         "Terraform",
         "Prisma",

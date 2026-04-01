@@ -12,7 +12,7 @@ const { projects } = Astro.props;
 const sortedProjects = [...projects].sort((a, b) => b.id - a.id);
 
 // Technology category definitions
-const langTags = ['Java', 'JavaScript', 'TypeScript', 'Python', 'PHP', 'Go', 'Ruby', 'Kotlin', 'C', 'C++', 'Objective-C', 'Perl', 'COBOL', 'Shell', 'PL/SQL', 'VBA', 'Visual Basic 6', 'Visual Basic .NET', 'Android Java', 'Action Script', 'CoffeeScript', 'HTML/CSS', 'HTML', 'CSS', 'BML', 'SASS'];
+const langTags = ['Java', 'JavaScript', 'TypeScript', 'Python', 'PHP', 'Go', 'Ruby', 'Kotlin', 'C', 'C++', 'Objective-C', 'Perl', 'COBOL', 'Shell', 'PL/SQL', 'VBA', 'Visual Basic 6', 'Visual Basic .NET', 'Android Java', 'Action Script', 'CoffeeScript', 'HTML/CSS', 'BML', 'SASS'];
 const dbInfraTags = ['MySQL', 'PostgreSQL', 'Oracle', 'SQLite', 'Access', 'DB2', 'HSQL', 'Redis', 'Elasticsearch', 'Firestore', 'MongoDB', 'Realm', 'WikipediaDB', 'AWS', 'AWS Batch', 'GCP', 'Firebase', 'Terraform', 'serverless', 'nginx', 'Ansible', 'Vagrant', 'DRBD', 'Heartbeat', 'PaceMaker', 'Logstash', 'Kibana', 'FileBeats', 'Docker', 'Net-LD', 'WireShark', 'i-Filter', 'Kaspersky', 'Juniper'];
 
 const langSet = new Set(langTags);
