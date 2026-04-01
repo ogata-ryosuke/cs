@@ -5,9 +5,41 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Primary palette
+        // shadcn CSS variable colors
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
+        // Primary palette (keep existing numbered shades + add shadcn DEFAULT)
         primary: {
-          50: '#EFF6FF',  // Pencil展開背景 (#EFF6FF)
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+          50: '#EFF6FF',
           100: '#E0F2FE',
           500: '#0EA5E9',
           600: '#0284C7',
@@ -15,18 +47,18 @@ const config: Config = {
           900: '#082F49',
         },
         // Semantic colors (matching Pencil design)
-        'bg-page': '#FAFAFA',           // Pencil: #FAFAFA
-        'bg-surface': '#FFFFFF',        // Pencil: #FFFFFF
-        'bg-section': '#F4F4F5',        // Pencil: #F4F4F5 (テーブルヘッダー背景)
-        'border-light': '#E4E4E7',      // Pencil: #E4E4E7 (すべての境界線)
-        'text-primary': '#09090B',      // Pencil: #09090B (見出し・メインテキスト)
-        'text-secondary': '#71717A',    // Pencil: #71717A (ラベル・補助テキスト)
-        'text-tertiary': '#9CA3AF',     // Pencil: #9CA3AF (薄い補助テキスト)
-        'icon-success': '#16A34A',      // Pencil: #16A34A (チェックアイコン)
-        'tag-selected-bg': '#000000',   // Pencil: #000000 (選択フィルタ背景)
-        'tag-selected-text': '#FFFFFF', // Pencil: #FFFFFF (選択フィルタテキスト)
-        'tag-unselected-bg': '#FAFAFA', // Pencil: #FAFAFA (未選択フィルタ背景)
-        'tag-unselected-text': '#9CA3AF', // Pencil: #9CA3AF (未選択フィルタテキスト)
+        'bg-page': '#FAFAFA',
+        'bg-surface': '#FFFFFF',
+        'bg-section': '#F4F4F5',
+        'border-light': '#E4E4E7',
+        'text-primary': '#09090B',
+        'text-secondary': '#71717A',
+        'text-tertiary': '#9CA3AF',
+        'icon-success': '#16A34A',
+        'tag-selected-bg': '#000000',
+        'tag-selected-text': '#FFFFFF',
+        'tag-unselected-bg': '#FAFAFA',
+        'tag-unselected-text': '#9CA3AF',
       },
       spacing: {
         xs: '8px',
@@ -54,12 +86,39 @@ const config: Config = {
       },
       borderRadius: {
         card: '8px',
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
         sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
       },
+      keyframes: {
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
+        },
+        'collapsible-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-collapsible-content-height)' },
+        },
+        'collapsible-up': {
+          from: { height: 'var(--radix-collapsible-content-height)' },
+          to: { height: '0' },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        'collapsible-down': 'collapsible-down 0.2s ease-out',
+        'collapsible-up': 'collapsible-up 0.2s ease-out',
+      },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-animate')],
 }
 export default config

@@ -3,7 +3,7 @@ import Layout from '@/layouts/Layout.astro';
 import Header from '@/components/Header.astro';
 import ProfileCard from '@/components/ProfileCard.astro';
 import SkillsCard from '@/components/SkillsCard.astro';
-import ProjectsSection from '@/components/ProjectsSection.astro';
+import ProjectsSection from '@/components/react/ProjectsSection';
 import type { CareerSheetData } from '@/lib/types';
 import data from '@/lib/career-data.json';
 
@@ -16,7 +16,7 @@ const careerData = data as CareerSheetData;
 
   {/* Main Content */}
   <main class="pt-header">
-    <div class="max-w-page mx-auto px-xl py-xl space-y-xl">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 md:px-8 lg:px-20 py-6 md:py-xl space-y-8 md:space-y-xl">
       {/* Profile Section */}
       <section class="space-y-sm">
         <h2 class="text-sectionHeading text-text-primary font-bold">プロフィール</h2>
@@ -89,7 +89,7 @@ const careerData = data as CareerSheetData;
           ※
           一部期間の重複や近接している箇所がございますが、同一クライアントからの継続案件、または複数案件の並行稼働によるものであり、誤記ではございません。
         </p>
-        <ProjectsSection projects={careerData.projects} />
+        <ProjectsSection client:load projects={careerData.projects} />
       </section>
     </div>
   </main>
@@ -97,77 +97,3 @@ const careerData = data as CareerSheetData;
   {/* Footer padding */}
   <footer class="h-2xl"></footer>
 </Layout>
-
-<script>
-  // Accordion logic with chevron rotation
-  const projectRows = document.querySelectorAll('.project-row');
-  projectRows.forEach((row: Element) => {
-    const projectId = row.getAttribute('data-project-id');
-    const detailRow = document.querySelector(`.project-detail[data-project-id="${projectId}"]`);
-    const chevron = row.querySelector(`.chevron-${projectId}`);
-
-    row.addEventListener('click', () => {
-      if (detailRow) {
-        const isHidden = detailRow.classList.contains('hidden');
-        if (isHidden) {
-          detailRow.classList.remove('hidden');
-          row.classList.add('bg-primary-50');
-          if (chevron) (chevron as HTMLElement).style.transform = 'rotate(90deg)';
-        } else {
-          detailRow.classList.add('hidden');
-          row.classList.remove('bg-primary-50');
-          if (chevron) (chevron as HTMLElement).style.transform = 'rotate(0deg)';
-        }
-      }
-    });
-  });
-
-  // Toggle all details (expand/collapse all)
-  const toggleAllBtn = document.getElementById('toggle-all-details');
-  let allExpanded = false;
-
-  toggleAllBtn?.addEventListener('click', () => {
-    const details = document.querySelectorAll('.project-detail');
-    const rows = document.querySelectorAll('.project-row');
-    allExpanded = !allExpanded;
-
-    details.forEach((detail) => {
-      const pid = detail.getAttribute('data-project-id');
-      const row = document.querySelector(`.project-row[data-project-id="${pid}"]`);
-      const chevron = row?.querySelector(`.chevron-${pid}`);
-
-      if (allExpanded) {
-        detail.classList.remove('hidden');
-        row?.classList.add('bg-primary-50');
-        if (chevron) (chevron as HTMLElement).style.transform = 'rotate(90deg)';
-      } else {
-        detail.classList.add('hidden');
-        row?.classList.remove('bg-primary-50');
-        if (chevron) (chevron as HTMLElement).style.transform = 'rotate(0deg)';
-      }
-    });
-
-    toggleAllBtn.textContent = allExpanded ? 'すべて閉じる' : 'すべて開く';
-  });
-
-  // Technology expand/collapse handler
-  const techExpandBtns = document.querySelectorAll('.tech-expand-btn');
-  techExpandBtns.forEach((btn: Element) => {
-    btn.addEventListener('click', (e: Event) => {
-      e.stopPropagation(); // Prevent triggering accordion
-      const projectId = (btn as HTMLElement).getAttribute('data-project-id');
-      const collapsedTechs = document.querySelector(`.tech-collapsed[data-project-id="${projectId}"]`);
-      
-      if (collapsedTechs) {
-        if (collapsedTechs.classList.contains('hidden')) {
-          collapsedTechs.classList.remove('hidden');
-          (btn as HTMLElement).textContent = '- collapse';
-        } else {
-          collapsedTechs.classList.add('hidden');
-          const count = collapsedTechs.querySelectorAll('span').length;
-          (btn as HTMLElement).textContent = `+${count} more`;
-        }
-      }
-    });
-  });
-</script>

@@ -9,18 +9,16 @@ const { skills } = Astro.props;
 ---
 
 <div class="bg-bg-surface border border-border-light rounded-card overflow-hidden">
-  <table class="w-full">
-    <tbody class="divide-y divide-border-light">
-      {Object.entries(skills).map(([category, techList]) => (
-        <tr class="hover:bg-bg-section transition">
-          <td class="px-lg py-md bg-bg-section font-semibold text-body text-text-primary w-skillsLabel">
-            {category}
-          </td>
-          <td class="px-lg py-md text-body text-text-secondary">
-            <p>{techList.join(', ')}</p>
-          </td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
+  <div class="divide-y divide-border-light">
+    {Object.entries(skills).map(([category, techList]) => (
+      <div class="flex flex-col sm:flex-row hover:bg-bg-section transition">
+        <div class="px-6 py-3 sm:py-4 bg-bg-section font-semibold text-body text-text-primary sm:w-[168px] flex-shrink-0">
+          {category}
+        </div>
+        <div class="px-6 py-2 sm:py-4 text-body text-text-secondary">
+          <p>{techList.join(', ')}</p>
+        </div>
+      </div>
+    ))}
+  </div>
 </div>
