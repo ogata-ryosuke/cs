@@ -33,14 +33,14 @@ const nonTrending = [...allTechsSet].filter(t => !trendingTechs.includes(t)).sor
     <div id="tech-filters" class="flex gap-xs flex-wrap items-center">
       <button
         id="filter-all"
-        class="inline-block px-sm py-xs rounded bg-tag-selected-bg text-tag-selected-text transition"
+        class="inline-block px-sm py-xs rounded bg-tag-selected-bg text-tag-selected-text border border-tag-selected-bg transition"
         data-filter="all"
       >
         すべて
       </button>
       {trendingFiltered.map(tech => (
         <button
-          class="tech-filter inline-block px-sm py-xs rounded bg-tag-unselected-bg text-tag-unselected-text hover:bg-white border border-border-light transition"
+          class="tech-filter inline-block px-sm py-xs rounded bg-tag-unselected-bg text-tag-unselected-text hover:bg-tag-selected-bg hover:text-tag-selected-text active:bg-tag-selected-bg active:text-tag-selected-text border border-border-light transition"
           data-tech={tech}
         >
           {tech}
@@ -51,7 +51,7 @@ const nonTrending = [...allTechsSet].filter(t => !trendingTechs.includes(t)).sor
           <div id="tech-filters-collapsed" class="hidden flex gap-xs flex-wrap w-full">
             {nonTrending.map(tech => (
               <button
-                class="tech-filter inline-block px-sm py-xs rounded bg-tag-unselected-bg text-tag-unselected-text hover:bg-white border border-border-light transition"
+                class="tech-filter inline-block px-sm py-xs rounded bg-tag-unselected-bg text-tag-unselected-text hover:bg-tag-selected-bg hover:text-tag-selected-text active:bg-tag-selected-bg active:text-tag-selected-text border border-border-light transition"
                 data-tech={tech}
               >
                 {tech}
@@ -135,10 +135,11 @@ const nonTrending = [...allTechsSet].filter(t => !trendingTechs.includes(t)).sor
   filterAll?.addEventListener('click', () => {
     selectedTechs.clear();
     techFilters.forEach((btn) => {
-      btn.classList.remove('bg-tag-selected-bg', 'text-tag-selected-text');
-      btn.classList.add('bg-tag-unselected-bg', 'text-tag-unselected-text');
+      btn.classList.remove('bg-tag-selected-bg', 'text-tag-selected-text', 'border-tag-selected-bg');
+      btn.classList.add('bg-tag-unselected-bg', 'text-tag-unselected-text', 'border-border-light');
     });
-    filterAll?.classList.add('bg-tag-selected-bg', 'text-tag-selected-text');
+    filterAll?.classList.add('bg-tag-selected-bg', 'text-tag-selected-text', 'border-tag-selected-bg');
+    filterAll?.classList.remove('bg-tag-unselected-bg', 'text-tag-unselected-text', 'border-border-light');
     updateFilter();
   });
 
@@ -149,16 +150,16 @@ const nonTrending = [...allTechsSet].filter(t => !trendingTechs.includes(t)).sor
 
       if (selectedTechs.has(tech)) {
         selectedTechs.delete(tech);
-        btn.classList.remove('bg-tag-selected-bg', 'text-tag-selected-text');
-        btn.classList.add('bg-tag-unselected-bg', 'text-tag-unselected-text');
+        btn.classList.remove('bg-tag-selected-bg', 'text-tag-selected-text', 'border-tag-selected-bg');
+        btn.classList.add('bg-tag-unselected-bg', 'text-tag-unselected-text', 'border-border-light');
       } else {
         selectedTechs.add(tech);
-        btn.classList.add('bg-tag-selected-bg', 'text-tag-selected-text');
-        btn.classList.remove('bg-tag-unselected-bg', 'text-tag-unselected-text');
+        btn.classList.add('bg-tag-selected-bg', 'text-tag-selected-text', 'border-tag-selected-bg');
+        btn.classList.remove('bg-tag-unselected-bg', 'text-tag-unselected-text', 'border-border-light');
       }
 
-      filterAll?.classList.remove('bg-tag-selected-bg', 'text-tag-selected-text');
-      filterAll?.classList.add('bg-tag-unselected-bg', 'text-tag-unselected-text');
+      filterAll?.classList.remove('bg-tag-selected-bg', 'text-tag-selected-text', 'border-tag-selected-bg');
+      filterAll?.classList.add('bg-tag-unselected-bg', 'text-tag-unselected-text', 'border-border-light');
       updateFilter();
     });
   });
