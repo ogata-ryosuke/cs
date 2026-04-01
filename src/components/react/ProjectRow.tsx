@@ -45,20 +45,20 @@ export function ProjectRow({ project, index, isExpanded, onToggle }: ProjectRowP
           isExpanded && 'bg-[#EFF6FF]',
         )}
       >
-        <td className="px-6 py-4 text-[14px] text-[#71717A] text-center">
+        <td className="px-3 py-3 text-[14px] text-[#71717A] text-center">
           <ChevronRight
             className={cn('w-5 h-5 inline-block transition-transform', isExpanded && 'rotate-90')}
           />
         </td>
-        <td className="px-6 py-4 text-[14px] text-[#71717A] hidden lg:table-cell">{index}</td>
-        <td className="px-6 py-4 text-[14px] text-[#71717A] whitespace-nowrap">
+        <td className="px-3 py-3 text-[14px] text-[#71717A] text-right hidden lg:table-cell">{index}</td>
+        <td className="px-3 py-3 text-[14px] text-[#71717A] whitespace-nowrap">
           {project.period.start} ~ {project.period.end ?? '現在'}
         </td>
-        <td className="px-6 py-4 text-[14px] text-[#71717A] text-right whitespace-nowrap hidden lg:table-cell">
+        <td className="px-3 py-3 text-[14px] text-[#71717A] text-right whitespace-nowrap hidden lg:table-cell">
           {monthsCount}ヶ月
         </td>
-        <td className="px-6 py-4 text-[14px] text-[#09090B] font-medium whitespace-nowrap">
-          <div>{project.name}</div>
+        <td className="px-3 py-3 text-[14px] text-[#09090B] font-medium overflow-hidden">
+          <div className="whitespace-nowrap overflow-hidden text-ellipsis">{project.name}</div>
           <div className="flex gap-2 mt-1">
             {project.contractType === '社員' && (
               <span className="inline-block px-2 py-0.5 rounded text-[10px] font-semibold bg-gray-100 text-gray-600 border border-gray-200">社員</span>
@@ -74,7 +74,7 @@ export function ProjectRow({ project, index, isExpanded, onToggle }: ProjectRowP
             )}
           </div>
         </td>
-        <td className="px-6 py-4 text-[14px] text-[#71717A] hidden md:table-cell">
+        <td className="px-3 py-3 text-[14px] text-[#71717A] hidden md:table-cell">
           <div className="flex gap-2 flex-wrap items-center">
             {displayTechs.map(tech => (
               <span key={tech} className="inline-block px-3 py-2 rounded bg-[#FAFAFA] text-[#9CA3AF] text-[11px] border border-[#E4E4E7]">
@@ -103,13 +103,13 @@ export function ProjectRow({ project, index, isExpanded, onToggle }: ProjectRowP
             )}
           </div>
         </td>
-        <td className="px-6 py-4 text-[14px] text-[#71717A] hidden lg:table-cell">{project.teamSize}人</td>
+        <td className="px-3 py-3 text-[14px] text-[#71717A] whitespace-nowrap text-right hidden lg:table-cell">{project.teamSize}人</td>
       </tr>
 
       {/* Detail row */}
       {isExpanded && (
         <tr>
-          <td colSpan={7} className="px-6 py-4 bg-[#EFF6FF]">
+          <td colSpan={7} className="px-3 py-3 bg-[#EFF6FF]">
             <div className="space-y-3">
               {descriptionItems.length > 0 && (
                 <div>
