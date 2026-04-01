@@ -109,7 +109,7 @@ export function ProjectRow({ project, index, isExpanded, onToggle }: ProjectRowP
       {/* Detail row */}
       {isExpanded && (
         <tr>
-          <td colSpan={7} className="px-3 py-3 bg-[#EFF6FF]">
+          <td colSpan={7} className="pl-[52px] pr-6 py-4 bg-[#EFF6FF]">
             <div className="space-y-3">
               {descriptionItems.length > 0 && (
                 <div>
