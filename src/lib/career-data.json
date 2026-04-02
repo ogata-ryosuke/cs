@@ -670,7 +670,7 @@
         "end": "2018/09"
       },
       "monthCount": 4,
-      "teamSize": 10,
+      "teamSize": 1,
       "technologies": [
         "HTML/CSS",
         "JavaScript",
@@ -689,7 +689,7 @@
         "end": "2019/09"
       },
       "monthCount": 10,
-      "teamSize": 15,
+      "teamSize": 10,
       "technologies": [
         "Python",
         "HTML/CSS",
@@ -714,7 +714,7 @@
         "end": "2020/01"
       },
       "monthCount": 4,
-      "teamSize": 4,
+      "teamSize": 2,
       "technologies": [
         "Go",
         "HTML/CSS",
@@ -736,7 +736,7 @@
         "end": "2020/05"
       },
       "monthCount": 8,
-      "teamSize": 6,
+      "teamSize": 4,
       "technologies": [
         "PHP",
         "Python",
@@ -782,7 +782,7 @@
         "end": "2020/09"
       },
       "monthCount": 2,
-      "teamSize": 4,
+      "teamSize": 1,
       "technologies": [
         "Laravel",
         "Vue.js",
