@@ -26,7 +26,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
   const filteredProjects = useMemo(() => {
     if (selectedTechs.size === 0) return sortedProjects;
     return sortedProjects.filter(p =>
-      p.technologies.some(t => selectedTechs.has(t)),
+      [...selectedTechs].every(t => p.technologies.includes(t)),
     );
   }, [sortedProjects, selectedTechs]);
 

@@ -41,12 +41,14 @@ function ProjectCard({ project }: { project: Project }) {
     <div className="bg-white border border-[#E4E4E7] rounded-lg overflow-hidden print-card">
       {/* Header */}
       <div className="px-5 py-3 bg-[#F4F4F5] border-b border-[#E4E4E7] flex flex-wrap items-center gap-x-4 gap-y-1">
+        <span className="text-[12px] text-[#71717A]">No.{project.id}</span>
         <span className="text-[14px] font-semibold text-[#09090B]">{project.name}</span>
         <span className="text-[12px] text-[#71717A]">
           {project.period.start} ~ {project.period.end ?? '現在'}
         </span>
         <span className="text-[12px] text-[#71717A]">{monthsCount}ヶ月</span>
-        <span className="text-[12px] text-[#71717A]">{project.teamSize}人</span>
+        <span className="flex-1"></span>
+        <span className="text-[12px] text-[#71717A]">開発メンバー{project.teamSize}名</span>
         {project.contractType === '社員' && (
           <span className="inline-block px-1.5 py-0.5 rounded text-[10px] font-semibold bg-gray-100 text-gray-600 border border-gray-200">社員</span>
         )}
