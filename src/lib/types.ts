@@ -49,10 +49,12 @@ export interface SkillsData {
 
 export interface SelfPRData {
   summary: string;
+  careerHistory: string[];
   strengths: string[];
 }
 
 export interface CareerSheetData {
+  updateDate: string;
   profile: ProfileData;
   specialties: SpecialtiesData;
   skills: SkillsData;

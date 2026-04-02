@@ -41,7 +41,7 @@ export function ProjectRow({ project, index, isExpanded, onToggle }: ProjectRowP
       <tr
         onClick={onToggle}
         className={cn(
-          'hover:bg-[#F4F4F5] transition cursor-pointer',
+          'hover:bg-[#F4F4F5] transition cursor-pointer border-b border-[#E4E4E7]/50',
           isExpanded && 'bg-[#EFF6FF]',
         )}
       >
@@ -108,13 +108,13 @@ export function ProjectRow({ project, index, isExpanded, onToggle }: ProjectRowP
 
       {/* Detail row */}
       {isExpanded && (
-        <tr>
+        <tr className="border-b border-[#E4E4E7]/50">
           <td colSpan={7} className="pl-[52px] pr-6 py-4 bg-[#EFF6FF]">
             <div className="space-y-3">
               {descriptionItems.length > 0 && (
                 <div>
                   <h4 className="text-[16px] font-semibold text-[#09090B] mb-2">担当業務</h4>
-                  <ul className="list-disc list-inside text-[14px] text-[#71717A] leading-relaxed space-y-1">
+                  <ul className="list-disc list-inside text-[14px] text-[#52525B] leading-relaxed space-y-1">
                     {descriptionItems.map((item, i) => <li key={i}>{item}</li>)}
                   </ul>
                 </div>
@@ -122,7 +122,7 @@ export function ProjectRow({ project, index, isExpanded, onToggle }: ProjectRowP
               {learningItems.length > 0 && (
                 <div>
                   <h4 className="text-[16px] font-semibold text-[#09090B] mb-2">業務で得た知見</h4>
-                  <ul className="list-disc list-inside text-[14px] text-[#71717A] leading-relaxed space-y-1">
+                  <ul className="list-disc list-inside text-[14px] text-[#52525B] leading-relaxed space-y-1">
                     {learningItems.map((item, i) => <li key={i}>{item}</li>)}
                   </ul>
                 </div>
@@ -130,7 +130,7 @@ export function ProjectRow({ project, index, isExpanded, onToggle }: ProjectRowP
               {commentsItems.length > 0 && (
                 <div>
                   <h4 className="text-[16px] font-semibold text-[#09090B] mb-2">コメント</h4>
-                  <ul className="list-disc list-inside text-[14px] text-[#71717A] leading-relaxed space-y-1">
+                  <ul className="list-disc list-inside text-[14px] text-[#52525B] leading-relaxed space-y-1">
                     {commentsItems.map((item, i) => <li key={i}>{item}</li>)}
                   </ul>
                 </div>
@@ -223,7 +223,7 @@ export function ProjectCard({ project, index, isExpanded, onToggle }: ProjectRow
           {descriptionItems.length > 0 && (
             <div className="pt-3">
               <h4 className="text-[14px] font-semibold text-[#09090B] mb-1">担当業務</h4>
-              <ul className="list-disc list-inside text-[13px] text-[#71717A] leading-relaxed space-y-0.5">
+              <ul className="list-disc list-inside text-[13px] text-[#52525B] leading-relaxed space-y-0.5">
                 {descriptionItems.map((item, i) => <li key={i}>{item}</li>)}
               </ul>
             </div>
@@ -231,7 +231,7 @@ export function ProjectCard({ project, index, isExpanded, onToggle }: ProjectRow
           {learningItems.length > 0 && (
             <div>
               <h4 className="text-[14px] font-semibold text-[#09090B] mb-1">業務で得た知見</h4>
-              <ul className="list-disc list-inside text-[13px] text-[#71717A] leading-relaxed space-y-0.5">
+              <ul className="list-disc list-inside text-[13px] text-[#52525B] leading-relaxed space-y-0.5">
                 {learningItems.map((item, i) => <li key={i}>{item}</li>)}
               </ul>
             </div>
@@ -239,7 +239,7 @@ export function ProjectCard({ project, index, isExpanded, onToggle }: ProjectRow
           {commentsItems.length > 0 && (
             <div>
               <h4 className="text-[14px] font-semibold text-[#09090B] mb-1">コメント</h4>
-              <ul className="list-disc list-inside text-[13px] text-[#71717A] leading-relaxed space-y-0.5">
+              <ul className="list-disc list-inside text-[13px] text-[#52525B] leading-relaxed space-y-0.5">
                 {commentsItems.map((item, i) => <li key={i}>{item}</li>)}
               </ul>
             </div>

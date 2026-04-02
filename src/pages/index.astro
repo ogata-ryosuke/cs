@@ -12,7 +12,7 @@ const careerData = data as CareerSheetData;
 
 <Layout title="職務経歴書 | Career Sheet">
   {/* Header */}
-  <Header updateDate="2026年4月" />
+  <Header updateDate={careerData.updateDate} />
 
   {/* Main Content */}
   <main class="pt-header">
@@ -61,11 +61,9 @@ const careerData = data as CareerSheetData;
             <h3 class="text-subheading text-text-primary font-semibold">≪略歴≫</h3>
             <p class="text-body text-text-primary leading-loose">{careerData.selfPR.summary}</p>
             <ul class="space-y-xs text-body text-text-secondary leading-relaxed pl-sm">
-              <li>・1社目：自社サービス企業で業務システム開発を経験。</li>
-              <li>・2社目：ソフトウェアハウスでWeb系開発の基礎を習得。</li>
-              <li>・フリーランス：Web系を中心にSES・受託案件へ従事。</li>
-              <li>・3社目：アプリ〜APIサーバまで含む一括請負案件に従事。</li>
-              <li>・以降：受託案件を中心に、見積もりから開発・リリースまで一貫して担当。</li>
+              {careerData.selfPR.careerHistory.map(item => (
+                <li>・{item}</li>
+              ))}
             </ul>
           </div>
 
