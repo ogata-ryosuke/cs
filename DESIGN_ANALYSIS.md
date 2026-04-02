@@ -37,10 +37,9 @@ Page (1440px, #FAFAFA)
 │   │
 │   └── 05. Projects Section
 │       ├── Title: 案件一覧
-│       ├── FilterBar (技術タグ)
-│       └── ProjectTable (アコーディオン形式)
-│           ├── Header Row
-│           ├── Project Rows (展開可能)
+│       ├── TechFilterBar (技術タグ AND検索)
+│       └── ProjectCardList (カードレイアウト)
+│           ├── Project Cards (展開可能)
 │           └── Expanded Panel (詳細情報)
 ```
 
@@ -125,13 +124,13 @@ Page (1440px, #FAFAFA)
 
 #### ProjectsSection
 
-- **FilterBar**: 技術タグフィルター
+- **TechFilterBar**: 技術タグフィルター（AND検索）
   - タグ: #FAFAFA背景、#71717A文字（デフォルト）
   - アクティブ時: #09090B背景、#FFFFFF文字
-  - 「すべて」タグ: デフォルトアクティブ
-- **ProjectTable**: アコーディオン形式
-  - ヘッダー行（グレー背景）
-  - Project行（白）：いくつかは展開状態（青背景）も表示
+  - 「すべて」ボタン: フィルターリセット
+- **ProjectCardList**: カードレイアウト
+  - 各案件をカード形式で表示
+  - カードは展開/折畳可能
   - 展開時：詳細パネル表示（青背景 #EFF6FF）
 
 ---
@@ -143,18 +142,23 @@ Page (1440px, #FAFAFA)
 interface Project {
   id: number;
   period: {
-    start: string; // "2026/01" format
-    end: string; // "2026/03" format
+    start: string; // "YYYY/MM" format
+    end: string;   // "YYYY/MM" format
   };
   monthCount: number;
   name: string;
   technologies: string[];
   teamSize: number;
   description?: string;
+  contractType?: "社員" | "SES" | "受託";
+  isLeader?: boolean;
+  learning?: string;
+  comments?: string;
 }
 
 // キャリアシート 全体
 interface CareerSheetData {
+  updateDate: string;
   profile: {
     bio: string;
     github?: string;
@@ -171,19 +175,15 @@ interface CareerSheetData {
   };
   selfPR: {
     summary: string;
+    careerHistory: string[];
     strengths: string[];
   };
   projects: Project[];
 }
 
-// フィルター状態
+// フィルター状態（Set<string> で AND検索）
 interface FilterState {
-  selectedTags: string[] | null; // null = "All", [] = none
-}
-
-// アコーディオン状態
-interface AccordionState {
-  expandedProjectId: number | null;
+  selectedTechs: Set<string>; // empty = "All"
 }
 ```
 
@@ -192,13 +192,16 @@ interface AccordionState {
 ### 1-5. 状態管理計画
 
 ```typescript
-// Page Component (app/page.tsx)
-const [selectedTags, setSelectedTags] = useState<string[] | null>(null);
-const [expandedProjectId, setExpandedProjectId] = useState<number | null>(null);
+// ProjectsSection (src/components/react/ProjectsSection.tsx)
+const [selectedTechs, setSelectedTechs] = useState<Set<string>>(new Set());
 
-// Filtered projects
+// Filtered projects (AND検索: 選択した全タグを含む案件のみ表示)
 const filteredProjects =
-  selectedTags === null ? projects : projects.filter((p) => selectedTags.some((tag) => p.technologies.includes(tag)));
+  selectedTechs.size === 0
+    ? sortedProjects
+    : sortedProjects.filter(p =>
+        [...selectedTechs].every(t => p.technologies.includes(t)),
+      );
 ```
 
 ---
@@ -209,12 +212,6 @@ const filteredProjects =
 - [x] セクション・コンポーネント分割完成
 - [x] 色・フォント・スペーシング変数抽出完成
 - [x] データスキーマ定義完成
-- [ ] TypeScript `types/index.ts` 実装
-- [ ] `tailwind.config.js` 設定テンプレート作成
-- [ ] サンプル JSON データ作成
-
----
-
-## 次のステップ
-
-Phase 1-2: TypeScript型定義ファイル生成 → 実行
+- [x] TypeScript `lib/types.ts` 実装
+- [x] `tailwind.config.js` 設定テンプレート作成
+- [x] JSON データ作成 (`lib/career-data.json`)

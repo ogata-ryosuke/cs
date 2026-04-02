@@ -1,78 +1,38 @@
-# career-sheet
+# 職務経歴書 | Career Sheet
 
-職務経歴書（Career Sheet）- Astro + TypeScript + Tailwind CSS
+サーバーサイド・フロントエンド・モバイルアプリまで幅広く対応可能なフルスタックエンジニアです。
+要件定義から設計・開発・リリースまで一貫して推進できることが強みです。
 
-## 開発環境のセットアップ
+> [経歴書(Web版)をひらく](https://ogata-ryosuke.github.io/cs/)
 
-```bash
-# 1. 依存パッケージをインストール
-npm install
+## 得意技術
 
-# 2. 開発サーバー起動
-npm run dev
+| 分野           | 技術                                     |
+| -------------- | ---------------------------------------- |
+| Frontend       | Flutter, React, Next.js, TypeScript      |
+| Backend        | Python, Ruby on Rails, PHP, Kotlin, Java |
+| Infrastructure | AWS, GCP, Terraform, Firebase, ELK Stack |
+| AI / LLM       | OpenAI, LangSmith, promptfoo             |
 
-# 3. http://localhost:3000 でプレビュー
-```
+## 得意分野
 
-## ビルド
+- 要件整理から仕様・設計への落とし込み
+- Web・モバイル・API・DBをまたいだ一貫した設計・開発
+- フルスクラッチ案件における技術選定・実装方針の具体化・開発推進
+- 既存システムの問題点整理・改善方針の立案
+- LLMを活用した機能開発・評価ロジック設計
+- 小規模〜中規模チームでのリーダー／テックリード業務
 
-```bash
-# 静的ビルド（GitHub Pages デプロイ用）
-npm run build
+## 略歴
 
-# 出力は `dist/` ディレクトリに生成されます
-```
+20年以上にわたり多種多様な開発プロジェクトに従事。
 
-## GitHub Pages へのデプロイ
+1. 自社サービス企業で業務システム開発を経験
+2. ソフトウェアハウスでWeb系開発の基礎を習得
+3. フリーランスとしてWeb系を中心にSES・受託案件へ従事
+4. アプリ〜APIサーバまで含む一括請負案件に従事
+5. 受託案件を中心に、見積もりから開発・リリースまで一貫して担当
 
-### パス設定（サブパス デプロイの場合）
+## 開発について
 
-`astro.config.mjs` で以下を編集：
-
-```javascript
-export default defineConfig({
-  integrations: [tailwind()],
-  site: "https://username.github.io/carrer-sheet",
-  base: "/carrer-sheet",
-});
-```
-
-### GitHub Actions ワークフロー
-
-`.github/workflows/deploy.yml` を作成してください。
-
-## プロジェクト構成
-
-```
-src/
-  ├── pages/
-  │   └── index.astro         # メインページ
-  ├── layouts/
-  │   └── Layout.astro        # ベースレイアウト
-  ├── components/
-  │   ├── Header.astro        # 固定ヘッダー
-  │   ├── ProfileCard.astro   # プロフィール
-  │   ├── SkillsCard.astro    # 技術スタック
-  │   ├── ProjectsSection.astro # 案件一覧（フィルタ＋アコーディオン）
-  │   ├── ProjectTable.astro  # テーブルラッパー
-  │   ├── ProjectRow.astro    # アコーディオン行
-  │   └── TechTagBadge.astro  # タグバッジ
-  ├── lib/
-  │   ├── types.ts            # TypeScript 型定義
-  │   └── sample-data.json    # サンプルデータ
-  └── styles/
-      └── globals.css         # グローバルスタイル
-```
-
-## 機能
-
-- **固定ヘッダー** - タイトルと更新日時
-- **プロフィール** - 自己紹介とGitHubリンク
-- **技術スタック** - 得意分野の技術一覧
-- **案件フィルタリング** - タグベースの検索機能
-- **アコーディオン** - 案件詳細の展開/折畳
-- **静的生成** - GitHub Pages 対応
-
-## ライセンス
-
-MIT
+開発環境のセットアップやビルド手順は [DEVELOPMENT.md](DEVELOPMENT.md) を参照してください。
