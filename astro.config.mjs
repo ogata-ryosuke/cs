@@ -6,6 +6,6 @@ import react from "@astrojs/react";
 export default defineConfig({
   integrations: [tailwind(), react()],
   output: "static",
-  site: "https://ogata-ryosuke.github.io",
+  site: "https://variantcode.co.jp",
   base: "/cs",
 });
