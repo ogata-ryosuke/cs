@@ -1,0 +1,16 @@
+{
+  "name": "職務経歴書 | Career Sheet",
+  "short_name": "Career Sheet",
+  "description": "Webエンジニアの職務経歴書ポートフォリオサイト",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAFA",
+  "theme_color": "#0EA5E9",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

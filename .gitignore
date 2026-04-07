@@ -23,7 +23,5 @@ pnpm-debug.log*
 .DS_Store
 
 # Build artifacts
-*.js
 *.map
-scripts/
 src/lib/projects_extracted.json
