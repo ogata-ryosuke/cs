@@ -1,5 +1,6 @@
 ---
 import '../styles/globals.css';
+import { careerData } from '@/lib/career-data-loader';
 
 interface Props {
   title?: string;
@@ -13,6 +14,63 @@ const {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 const ogImage = new URL('/favicon.svg', Astro.site).href;
+
+const dateModified = (() => {
+  const match = careerData.updateDate.match(/(\d{4})年(\d{1,2})月/);
+  if (!match) return new Date().toISOString().slice(0, 10);
+  return `${match[1]}-${match[2].padStart(2, '0')}-01`;
+})();
+
+const allSkills = [
+  ...careerData.skills.frontend,
+  ...careerData.skills.backend,
+  ...careerData.skills.infrastructure,
+  ...careerData.skills.ai,
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@id": `${Astro.site}#person`,
+      },
+      "url": canonicalURL,
+      "name": title,
+      "description": description,
+      "inLanguage": "ja",
+      "dateModified": dateModified,
+    },
+    {
+      "@type": "Person",
+      "@id": `${Astro.site}#person`,
+      "name": careerData.profile.name ?? '',
+      "jobTitle": "フルスタックエンジニア",
+      "description": careerData.profile.bio,
+      "url": canonicalURL,
+      "sameAs": [
+        careerData.profile.github,
+      ],
+      "knowsAbout": allSkills,
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "フルスタックエンジニア",
+"skills": allSkills.join(", "),
+      },
+    },
+    {
+      "@type": "WebSite",
+      "url": Astro.site?.toString(),
+      "name": "職務経歴書 | Career Sheet",
+      "description": description,
+      "inLanguage": "ja",
+      "author": {
+        "@id": `${Astro.site}#person`,
+      },
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -36,13 +94,16 @@ const ogImage = new URL('/favicon.svg', Astro.site).href;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:site_name" content="Career Sheet" />
+    <meta property="og:site_name" content={title} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+
+    <!-- JSON-LD Structured Data -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-71LZYCQY4J"></script>

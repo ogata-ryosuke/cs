@@ -15,7 +15,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
   );
 
   const allTechs = useMemo(
-    () => new Set(sortedProjects.flatMap(p => p.technologies)),
+    () => new Set(sortedProjects.flatMap(p => [...p.languages, ...p.databases, ...p.frameworks])),
     [sortedProjects],
   );
 
@@ -26,7 +26,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
   const filteredProjects = useMemo(() => {
     if (selectedTechs.size === 0) return sortedProjects;
     return sortedProjects.filter(p =>
-      [...selectedTechs].every(t => p.technologies.includes(t)),
+      [...selectedTechs].every(t => [...p.languages, ...p.databases, ...p.frameworks].includes(t)),
     );
   }, [sortedProjects, selectedTechs]);
 

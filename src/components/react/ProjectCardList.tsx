@@ -32,7 +32,11 @@ function ProjectCard({ project }: { project: Project }) {
     ? (endYear! - startYear) * 12 + (endMonth! - startMonth + 1)
     : '進行中';
 
-  const techs = sortTechs(project.technologies);
+  const techs = sortTechs([
+    ...project.languages,
+    ...project.databases,
+    ...project.frameworks,
+  ]);
   const descItems = project.description?.split('\n').filter(Boolean) || [];
   const learnItems = project.learning?.split('\n').filter(Boolean) || [];
   const commentItems = project.comments?.split('\n').filter(Boolean) || [];
