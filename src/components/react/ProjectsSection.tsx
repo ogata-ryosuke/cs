@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { TechFilterBar } from './TechFilterBar';
 import { ProjectCardList } from './ProjectCardList';
-import { categorizeTechs } from '@/lib/tech-categories';
+import { categorizeTechs, langTags } from '@/lib/tech-categories';
 import type { Project } from '@/lib/types';
 
 interface ProjectsSectionProps {
@@ -33,8 +33,16 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
   const toggleTech = (tech: string) => {
     setSelectedTechs(prev => {
       const next = new Set(prev);
-      if (next.has(tech)) next.delete(tech);
-      else next.add(tech);
+      if (next.has(tech)) {
+        next.delete(tech);
+      } else {
+        if (langTags.has(tech)) {
+          for (const t of next) {
+            if (langTags.has(t)) next.delete(t);
+          }
+        }
+        next.add(tech);
+      }
       return next;
     });
   };

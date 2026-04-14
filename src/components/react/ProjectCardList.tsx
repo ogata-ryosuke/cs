@@ -14,6 +14,14 @@ function sortTechs(technologies: string[]) {
 }
 
 export function ProjectCardList({ projects }: ProjectCardListProps) {
+  if (projects.length === 0) {
+    return (
+      <div className="flex items-center justify-center min-h-[320px] bg-white border border-[#E4E4E7] rounded-lg">
+        <p className="text-[14px] text-[#9CA3AF]">該当する案件がありません</p>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-4">
       {projects.map((project) => (
