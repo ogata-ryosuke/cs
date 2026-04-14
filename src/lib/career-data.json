@@ -1548,7 +1548,7 @@
         "start": "2026/01",
         "end": "2026/04"
       },
-      "monthCount": 3,
+      "monthCount": 4,
       "teamSize": 9,
       "projectSize": 10,
       "description": "法務・契約書などのドキュメントレビュー業務を効率化するエンタープライズ向けプラットフォーム\nPDF/Word/Power Pointをアップロードし、各ドキュメント種類ごとに準備した観点を元に、LLMを利用したAIレビューを実施する",
