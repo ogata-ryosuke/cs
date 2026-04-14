@@ -29,6 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Create private data from secret
+        run: echo '${{ secrets.CAREER_DATA_PRIVATE }}' > src/lib/career-data.private.json
+
       - name: Build
         run: npm run build
 
