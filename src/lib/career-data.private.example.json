@@ -1,0 +1,12 @@
+{
+  "profile": {
+    "name": "氏名を入力",
+    "gender": "男性 or 女性",
+    "birthday": "YYYY/MM/DD",
+    "nearestStation": "路線名 駅名",
+    "qualifications": [
+      "資格・免許"
+    ],
+    "education": "○○大学 ○○学部 卒業"
+  }
+}

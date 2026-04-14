@@ -4,10 +4,7 @@ import Header from '@/components/Header.astro';
 import ProfileCard from '@/components/ProfileCard.astro';
 import SkillsCard from '@/components/SkillsCard.astro';
 import ProjectsSection from '@/components/react/ProjectsSection';
-import type { CareerSheetData } from '@/lib/types';
-import data from '@/lib/career-data.json';
-
-const careerData = data as CareerSheetData;
+import { careerData } from '@/lib/career-data-loader';
 ---
 
 <Layout title="職務経歴書 | Career Sheet">
@@ -83,10 +80,11 @@ const careerData = data as CareerSheetData;
       <section class="space-y-sm">
         <h2 class="text-sectionHeading text-text-primary font-bold">案件一覧</h2>
         <div class="h-px bg-border-light"></div>
-        <p class="text-small text-text-secondary text-right">
-          ※
-          一部期間の重複や近接している箇所がございますが、同一クライアントからの継続案件、または複数案件の並行稼働によるものであり、誤記ではございません。
-        </p>
+        {careerData.projectsDisclaimer && (
+          <p class="text-small text-text-secondary text-right">
+            ※ {careerData.projectsDisclaimer}
+          </p>
+        )}
         <ProjectsSection client:load projects={careerData.projects} />
       </section>
     </div>

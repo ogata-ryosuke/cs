@@ -12,13 +12,27 @@ export interface Period {
   end: string; // "YYYY/MM" format
 }
 
+export type PhaseKey =
+  | "requirementDefinition"
+  | "basicDesign"
+  | "detailedDesign"
+  | "implementation"
+  | "integrationTest"
+  | "systemTest"
+  | "maintenance";
+
 export interface Project {
   id: number;
   period: Period;
   monthCount: number;
   name: string;
-  technologies: string[];
+  languages: string[];
+  databases: string[];
+  serverOS: string;
+  frameworks: string[];
+  phases: PhaseKey[];
   teamSize: number;
+  projectSize: number;
   description?: string;
   contractType?: "社員" | "SES" | "受託";
   isLeader?: boolean;
@@ -33,6 +47,11 @@ export interface Project {
 export interface ProfileData {
   bio: string;
   github?: string;
+  name?: string;
+  gender?: string;
+  birthday?: string; // "YYYY/MM/DD" format
+  nearestStation?: string;
+  qualifications?: string[];
 }
 
 export interface SpecialtiesData {
@@ -59,6 +78,7 @@ export interface CareerSheetData {
   specialties: SpecialtiesData;
   skills: SkillsData;
   selfPR: SelfPRData;
+  projectsDisclaimer?: string;
   projects: Project[];
 }
 

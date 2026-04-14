@@ -57,6 +57,7 @@
       "以降：受託案件を中心に、見積もりから開発・リリースまで一貫して担当。"
     ]
   },
+  "projectsDisclaimer": "一部期間の重複や近接している箇所がございますが、同一クライアントからの継続案件、または複数案件の並行稼働によるものであり、誤記ではございません。",
   "projects": [
     {
       "id": 1,
@@ -67,16 +68,28 @@
       },
       "monthCount": 8,
       "teamSize": 3,
-      "technologies": [
-        "Visual Basic 6",
-        "Visual Basic .NET",
-        "Windows",
-        "Windows API",
-        "Access"
-      ],
+      "projectSize": 3,
       "description": "不動産業務・事務・営業支援システム（自社パッケージ）の改修\n既存製品のVB6からVB.NETへの移行\n賃貸物件の空室状況、クリーニング状況、家賃支払いなどの検索・管理など開発",
       "comments": "OJT含む。",
-      "contractType": "社員"
+      "contractType": "社員",
+      "phases": [
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest"
+      ],
+      "languages": [
+        "Visual Basic 6",
+        "Visual Basic .NET"
+      ],
+      "databases": [
+        "Access"
+      ],
+      "serverOS": "Windows",
+      "frameworks": [
+        "Windows",
+        "Windows API"
+      ]
     },
     {
       "id": 2,
@@ -87,15 +100,29 @@
       },
       "monthCount": 4,
       "teamSize": 2,
-      "technologies": [
+      "projectSize": 2,
+      "description": "Home'sのような不動産サイト（自社サービス）\n地図検索で地域ごとの不動産が閲覧できる機能の追加",
+      "contractType": "社員",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "HTML/CSS",
         "JavaScript",
-        "Perl",
+        "Perl"
+      ],
+      "databases": [
         "Access",
         "PostgreSQL"
       ],
-      "description": "Home'sのような不動産サイト（自社サービス）\n地図検索で地域ごとの不動産が閲覧できる機能の追加",
-      "contractType": "社員"
+      "serverOS": "Windows",
+      "frameworks": []
     },
     {
       "id": 3,
@@ -106,21 +133,36 @@
       },
       "monthCount": 3,
       "teamSize": 3,
-      "technologies": [
+      "projectSize": 3,
+      "description": "事務経費手続き・勤怠管理などの自社社員向けWEBシステム\n開発と実際の運用、QAとりまとめ、引き継ぎ",
+      "comments": "OJT含む。",
+      "contractType": "社員",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "Java",
         "HTML/CSS",
-        "JavaScript",
+        "JavaScript"
+      ],
+      "databases": [
+        "MySQL"
+      ],
+      "serverOS": "macOS",
+      "frameworks": [
         "Struts",
         "Spring",
         "Hibernate",
         "JDBC",
         "JSP",
-        "prototype.js",
-        "MySQL"
-      ],
-      "description": "事務経費手続き・勤怠管理などの自社社員向けWEBシステム\n開発と実際の運用、QAとりまとめ、引き継ぎ",
-      "comments": "OJT含む。",
-      "contractType": "社員"
+        "prototype.js"
+      ]
     },
     {
       "id": 4,
@@ -131,21 +173,36 @@
       },
       "monthCount": 7,
       "teamSize": 25,
-      "technologies": [
+      "projectSize": 25,
+      "description": "災害発生時マルチキャスト配信による即時情報送信システム\n客先打ち合わせとドキュメント作成\n衛星通信端末など各装置との電文送受信IF\n電文解析、マルチキャスト配信\nJava SwingによるUI構築\nPDFレポート出力部分の実装を主に担当",
+      "comments": "要件・機能整理を進行しつつ、一部を自社に持ち帰り開発する形からスタート。客先打ち合わせとドキュメント作業を担当し、後半は開発チームに合流。\nJava Swingを利用。自社としても経験者が存在しなかったため、UIツールの作成、選定を担当。\n各通信機器とのモックをC++言語で作成。特定の電文を送受信するモックとして、デバッグに利用。",
+      "contractType": "社員",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "Java",
         "C++",
-        "C",
+        "C"
+      ],
+      "databases": [
+        "PostgreSQL",
+        "HSQL"
+      ],
+      "serverOS": "Windows",
+      "frameworks": [
         "Swing",
         "Thread",
         "Socket",
         "Jasper Report",
-        "Windows API",
-        "PostgreSQL",
-        "HSQL"
-      ],
-      "description": "災害発生時マルチキャスト配信による即時情報送信システム\n客先打ち合わせとドキュメント作成\n衛星通信端末など各装置との電文送受信IF\n電文解析、マルチキャスト配信\nJava SwingによるUI構築\nPDFレポート出力部分の実装を主に担当",
-      "comments": "要件・機能整理を進行しつつ、一部を自社に持ち帰り開発する形からスタート。客先打ち合わせとドキュメント作業を担当し、後半は開発チームに合流。\nJava Swingを利用。自社としても経験者が存在しなかったため、UIツールの作成、選定を担当。\n各通信機器とのモックをC++言語で作成。特定の電文を送受信するモックとして、デバッグに利用。",
-      "contractType": "社員"
+        "Windows API"
+      ]
     },
     {
       "id": 5,
@@ -156,21 +213,36 @@
       },
       "monthCount": 2,
       "teamSize": 2,
-      "technologies": [
+      "projectSize": 2,
+      "description": "EXCEL勤怠入力シートのマクロ改修、残業代計算機能の追加\n新人教育の手伝い",
+      "contractType": "社員",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "Java",
+        "JavaScript"
+      ],
+      "databases": [
+        "MySQL"
+      ],
+      "serverOS": "macOS",
+      "frameworks": [
         "Excel",
         "Struts",
         "Spring",
         "Hibernate",
         "JDBC",
         "JSP",
-        "JavaScript",
         "jQuery",
-        "prototype.js",
-        "MySQL"
-      ],
-      "description": "EXCEL勤怠入力シートのマクロ改修、残業代計算機能の追加\n新人教育の手伝い",
-      "contractType": "社員"
+        "prototype.js"
+      ]
     },
     {
       "id": 6,
@@ -181,13 +253,26 @@
       },
       "monthCount": 1,
       "teamSize": 15,
-      "technologies": [
+      "projectSize": 15,
+      "description": "CからJavaへの段階的な移行PJの一部\nC言語からJavaへの電文送受信IFの開発",
+      "comments": "一部機能のみ担当。",
+      "contractType": "社員",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "Java",
         "C"
       ],
-      "description": "CからJavaへの段階的な移行PJの一部\nC言語からJavaへの電文送受信IFの開発",
-      "comments": "一部機能のみ担当。",
-      "contractType": "社員"
+      "databases": [],
+      "serverOS": "macOS",
+      "frameworks": []
     },
     {
       "id": 7,
@@ -198,18 +283,33 @@
       },
       "monthCount": 1,
       "teamSize": 10,
-      "technologies": [
-        "PL/SQL",
-        "Java",
-        "SAStruts",
-        "JSF",
-        "JavaScript",
-        "jQuery",
-        "Oracle"
-      ],
+      "projectSize": 10,
       "description": "企業・社員管理パッケージの退職金管理部分の開発",
       "comments": "一部機能のみ担当。",
-      "contractType": "社員"
+      "contractType": "社員",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
+        "PL/SQL",
+        "Java",
+        "JavaScript"
+      ],
+      "databases": [
+        "Oracle"
+      ],
+      "serverOS": "macOS",
+      "frameworks": [
+        "SAStruts",
+        "JSF",
+        "jQuery"
+      ]
     },
     {
       "id": 8,
@@ -220,17 +320,32 @@
       },
       "monthCount": 3,
       "teamSize": 15,
-      "technologies": [
+      "projectSize": 15,
+      "description": "新築住宅の工事進捗管理･閲覧WEBシステム\n実際の業務フローをWEBで実現するための開発\n対象の住宅を購入したお客様へ提供するためのWEBページを開発",
+      "contractType": "社員",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "Java",
         "HTML/CSS",
-        "JavaScript",
-        "Spring",
-        "iBATIS",
-        "jQuery",
+        "JavaScript"
+      ],
+      "databases": [
         "Oracle"
       ],
-      "description": "新築住宅の工事進捗管理･閲覧WEBシステム\n実際の業務フローをWEBで実現するための開発\n対象の住宅を購入したお客様へ提供するためのWEBページを開発",
-      "contractType": "社員"
+      "serverOS": "macOS",
+      "frameworks": [
+        "Spring",
+        "iBATIS",
+        "jQuery"
+      ]
     },
     {
       "id": 9,
@@ -241,18 +356,33 @@
       },
       "monthCount": 3,
       "teamSize": 15,
-      "technologies": [
+      "projectSize": 15,
+      "description": "旅行代理店の店頭で航空券の状況･値段等を検索するWEBシステム\n既存DB(AS400)からの電文をJavaのクラスに変換してORMのように利用するライブラリの実装",
+      "contractType": "SES",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "Java",
         "HTML/CSS",
         "JavaScript",
-        "COBOL",
-        "Struts",
-        "Hibernate",
-        "jQuery",
+        "COBOL"
+      ],
+      "databases": [
         "MySQL"
       ],
-      "description": "旅行代理店の店頭で航空券の状況･値段等を検索するWEBシステム\n既存DB(AS400)からの電文をJavaのクラスに変換してORMのように利用するライブラリの実装",
-      "contractType": "SES"
+      "serverOS": "macOS",
+      "frameworks": [
+        "Struts",
+        "Hibernate",
+        "jQuery"
+      ]
     },
     {
       "id": 10,
@@ -263,22 +393,37 @@
       },
       "monthCount": 14,
       "teamSize": 30,
-      "technologies": [
+      "projectSize": 30,
+      "description": "地デジ対応テレビ専用映像配信サービス（端末含む）のサーバ側開発\n映像のレコメンド機能、お気に入り機能、レジューム機能の実装\nテレビと携帯電話でのユーザ情報・映像などの連携",
+      "learning": "多人数開発では、実装開始前の基盤整備と方針統一が、後半の品質と開発速度を大きく左右すると学んだ。\n要件から仕様へ落とし込む際は、機能要件だけでなく、テスト可能性と運用時のサービスレベルを同時に定義する必要があると理解した。\nテスト方針は単なる工程ではなく、どの品質をどこまで保証するかを合意するための設計行為だと実感した。\n負荷試験やテスト基盤整備は、障害を事後に見つけるためではなく、リリース前にリスクを前倒しで潰すために行うべきだと学んだ。",
+      "contractType": "SES",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "Java",
         "HTML/CSS",
         "BML",
-        "JavaScript",
+        "JavaScript"
+      ],
+      "databases": [
+        "Oracle",
+        "PostgreSQL"
+      ],
+      "serverOS": "macOS",
+      "frameworks": [
         "Spring",
         "Hibernate",
         "DJUnit",
         "JMeter",
-        "jQuery",
-        "Oracle",
-        "PostgreSQL"
-      ],
-      "description": "地デジ対応テレビ専用映像配信サービス（端末含む）のサーバ側開発\n映像のレコメンド機能、お気に入り機能、レジューム機能の実装\nテレビと携帯電話でのユーザ情報・映像などの連携",
-      "learning": "多人数開発では、実装開始前の基盤整備と方針統一が、後半の品質と開発速度を大きく左右すると学んだ。\n要件から仕様へ落とし込む際は、機能要件だけでなく、テスト可能性と運用時のサービスレベルを同時に定義する必要があると理解した。\nテスト方針は単なる工程ではなく、どの品質をどこまで保証するかを合意するための設計行為だと実感した。\n負荷試験やテスト基盤整備は、障害を事後に見つけるためではなく、リリース前にリスクを前倒しで潰すために行うべきだと学んだ。",
-      "contractType": "SES"
+        "jQuery"
+      ]
     },
     {
       "id": 11,
@@ -289,20 +434,35 @@
       },
       "monthCount": 3,
       "teamSize": 1,
-      "technologies": [
+      "projectSize": 1,
+      "description": "ECサイトの商品データ管理、運用ツール開発\n商品投稿をサポートするようなコピペなどを作成\n投稿から1週間たったところで通知がくるなどの機能",
+      "comments": "個人からの請負案件",
+      "contractType": "受託",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "Java",
         "HTML/CSS",
         "JavaScript",
+        "VBA"
+      ],
+      "databases": [
+        "PostgreSQL"
+      ],
+      "serverOS": "Windows",
+      "frameworks": [
         "Spring",
         "Hibernate",
         "jQuery",
-        "Excel",
-        "VBA",
-        "PostgreSQL"
-      ],
-      "description": "ECサイトの商品データ管理、運用ツール開発\n商品投稿をサポートするようなコピペなどを作成\n投稿から1週間たったところで通知がくるなどの機能",
-      "comments": "個人からの請負案件",
-      "contractType": "受託"
+        "Excel"
+      ]
     },
     {
       "id": 12,
@@ -313,14 +473,28 @@
       },
       "monthCount": 2,
       "teamSize": 4,
-      "technologies": [
-        "Java",
-        "PowerBuilder",
-        "Spring"
-      ],
+      "projectSize": 4,
       "description": "既存システムの改修（COBOL→Java変換）\n画面サンプル実装\nバッチ処理",
       "comments": "既存システムの改修方針を整理し、COBOL→Java変換の設計を担当。",
-      "contractType": "受託"
+      "contractType": "受託",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
+        "Java"
+      ],
+      "databases": [],
+      "serverOS": "Windows",
+      "frameworks": [
+        "PowerBuilder",
+        "Spring"
+      ]
     },
     {
       "id": 13,
@@ -331,18 +505,33 @@
       },
       "monthCount": 4,
       "teamSize": 4,
-      "technologies": [
-        "PHP",
-        "Smarty",
-        "MediaWiki",
-        "WikipediaDB",
-        "Mecab",
-        "IPAdic",
-        "Oracle"
-      ],
+      "projectSize": 4,
       "description": "SNSモバイルサイト新規開発\n当時流行していた占い師をキャラクターとしたサイトのサブサイト",
       "comments": "SNSモバイルサイトの新規開発において、PHPおよび形態素解析を活用した機能実装を担当。",
-      "contractType": "SES"
+      "contractType": "SES",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
+        "PHP"
+      ],
+      "databases": [
+        "WikipediaDB",
+        "Oracle"
+      ],
+      "serverOS": "macOS",
+      "frameworks": [
+        "Smarty",
+        "MediaWiki",
+        "Mecab",
+        "IPAdic"
+      ]
     },
     {
       "id": 14,
@@ -353,18 +542,32 @@
       },
       "monthCount": 13,
       "teamSize": 15,
-      "technologies": [
+      "projectSize": 15,
+      "description": "SalesForce上の画面作成\n保険シミュレーション画面（Flex）とJavaの連携処理\n帳票出力機能の開発",
+      "comments": "SalesforceのApexと、Adobe SystemsのFlexを連携するということ。FlexはAdobeのFlashでフロント画面を開発できるような技術。",
+      "contractType": "社員",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "Java",
+        "Apex"
+      ],
+      "databases": [],
+      "serverOS": "macOS",
+      "frameworks": [
         "Spring",
-        "Apex",
         "Flex",
         "VisualForce",
         "Adobe Acrobat",
         "iText"
-      ],
-      "description": "SalesForce上の画面作成\n保険シミュレーション画面（Flex）とJavaの連携処理\n帳票出力機能の開発",
-      "comments": "SalesforceのApexと、Adobe SystemsのFlexを連携するということ。FlexはAdobeのFlashでフロント画面を開発できるような技術。",
-      "contractType": "社員"
+      ]
     },
     {
       "id": 15,
@@ -375,21 +578,36 @@
       },
       "monthCount": 10,
       "teamSize": 10,
-      "technologies": [
+      "projectSize": 10,
+      "description": "URLフィルタリングパッケージソフトの管理画面\nフィルタリング基幹部分のデータ収集と集計バッチ\nHA構成の設計と構築／検証",
+      "learning": "バッチ処理は正常系の実装だけでなく、途中失敗・再開・再実行まで含めて設計して初めて業務で使えると学んだ。\n分散処理基盤では、性能向上だけを目的にせず、障害時の切り分けや運用手順の明確さまで設計に含める必要があると理解した。\nHA構成は構築して終わりではなく、実際にフェールオーバーを検証し、復旧時の挙動まで確認して初めて価値になると実感した。",
+      "comments": "案件にまで昇格しませんでしたが、特定の画像が成人向けのものであるかの判定するプログラムをプロトタイプ実装しました。今でいう画像解析のようなもの。",
+      "contractType": "社員",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "Java",
-        "Shell",
+        "Shell"
+      ],
+      "databases": [
+        "Oracle",
+        "MySQL"
+      ],
+      "serverOS": "macOS",
+      "frameworks": [
         "Spring",
         "Spring Batch",
         "DRBD",
         "Heartbeat",
-        "PaceMaker",
-        "Oracle",
-        "MySQL"
-      ],
-      "description": "URLフィルタリングパッケージソフトの管理画面\nフィルタリング基幹部分のデータ収集と集計バッチ\nHA構成の設計と構築／検証",
-      "learning": "バッチ処理は正常系の実装だけでなく、途中失敗・再開・再実行まで含めて設計して初めて業務で使えると学んだ。\n分散処理基盤では、性能向上だけを目的にせず、障害時の切り分けや運用手順の明確さまで設計に含める必要があると理解した。\nHA構成は構築して終わりではなく、実際にフェールオーバーを検証し、復旧時の挙動まで確認して初めて価値になると実感した。",
-      "comments": "案件にまで昇格しませんでしたが、特定の画像が成人向けのものであるかの判定するプログラムをプロトタイプ実装しました。今でいう画像解析のようなもの。",
-      "contractType": "社員"
+        "PaceMaker"
+      ]
     },
     {
       "id": 16,
@@ -400,18 +618,33 @@
       },
       "monthCount": 4,
       "teamSize": 3,
-      "technologies": [
+      "projectSize": 3,
+      "description": "WEB画面ベースのPUSH通知管理画面\nアプリに組み込むPUSH通知送信サービス\n※ゲームプラットフォーム開発と並行して従事",
+      "comments": "PUSH通知の管理・配信基盤の設計から実装までを担当。",
+      "contractType": "社員",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "Java",
         "JavaScript",
         "Objective-C",
-        "Android Java",
-        "SAStruts",
+        "Android Java"
+      ],
+      "databases": [
         "MySQL",
         "SQLite"
       ],
-      "description": "WEB画面ベースのPUSH通知管理画面\nアプリに組み込むPUSH通知送信サービス\n※ゲームプラットフォーム開発と並行して従事",
-      "comments": "PUSH通知の管理・配信基盤の設計から実装までを担当。",
-      "contractType": "社員"
+      "serverOS": "macOS",
+      "frameworks": [
+        "SAStruts"
+      ]
     },
     {
       "id": 17,
@@ -422,16 +655,31 @@
       },
       "monthCount": 4,
       "teamSize": 3,
-      "technologies": [
+      "projectSize": 3,
+      "description": "ゲーム配信プラットフォームの開発（LINEゲームのようなもの）\nAndroid向けホームアプリの機能追加を担当\nAIRアプリケーションでゲーム進捗を記録する機能のプロト\n※PUSH通知管理サービスと並行して従事",
+      "contractType": "社員",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "Android Java",
         "Action Script",
-        "Java",
-        "Spring",
-        "Adobe AIR",
+        "Java"
+      ],
+      "databases": [
         "SQLite"
       ],
-      "description": "ゲーム配信プラットフォームの開発（LINEゲームのようなもの）\nAndroid向けホームアプリの機能追加を担当\nAIRアプリケーションでゲーム進捗を記録する機能のプロト\n※PUSH通知管理サービスと並行して従事",
-      "contractType": "社員"
+      "serverOS": "macOS",
+      "frameworks": [
+        "Spring",
+        "Adobe AIR"
+      ]
     },
     {
       "id": 18,
@@ -441,24 +689,39 @@
         "end": "2012/11"
       },
       "monthCount": 7,
-      "teamSize": 30,
-      "technologies": [
+      "teamSize": 25,
+      "projectSize": 30,
+      "description": "保険営業員が保険商品を紹介する際にPC・タブレット端末を利用してプレゼンするためのアプリケーション\n窓口での簡易計算機能\nFPが作るようなライフプランシミュレーションの表やグラフを表示",
+      "comments": "JavaScript, JFreeChartはじめテックリードとしてプロトタイプの作成、サポートを行いました。\n保険計算結果の複雑なグラフを実現するため40クラスを超えるほどの大規模なライブラリを実装、デザインパターンの適用\nDojoというUIライブラリがまだリリースされて間もないものであったためアップデートが進んでおらず不都合が連発した。自作でカスタマイズして解決するなどした。\n保険計算結果の数列の検証は別チームが担当",
+      "contractType": "社員",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "Java",
         "HTML/CSS",
-        "JavaScript",
+        "JavaScript"
+      ],
+      "databases": [
+        "MySQL",
+        "DB2"
+      ],
+      "serverOS": "macOS",
+      "frameworks": [
         "Spring",
         "Struts",
         "Hibernate",
         "Dojo",
         "JFreeChart",
         "iText",
-        "Adobe Acrobat Pro",
-        "MySQL",
-        "DB2"
-      ],
-      "description": "保険営業員が保険商品を紹介する際にPC・タブレット端末を利用してプレゼンするためのアプリケーション\n窓口での簡易計算機能\nFPが作るようなライフプランシミュレーションの表やグラフを表示",
-      "comments": "JavaScript, JFreeChartはじめテックリードとしてプロトタイプの作成、サポートを行いました。\n保険計算結果の複雑なグラフを実現するため40クラスを超えるほどの大規模なライブラリを実装、デザインパターンの適用\nDojoというUIライブラリがまだリリースされて間もないものであったためアップデートが進んでおらず不都合が連発した。自作でカスタマイズして解決するなどした。\n保険計算結果の数列の検証は別チームが担当",
-      "contractType": "社員"
+        "Adobe Acrobat Pro"
+      ]
     },
     {
       "id": 19,
@@ -468,20 +731,35 @@
         "end": "2014/03"
       },
       "monthCount": 27,
-      "teamSize": 20,
-      "technologies": [
+      "teamSize": 5,
+      "projectSize": 20,
+      "description": "ブラウザ向けソーシャルゲームの開発\nサーバメインで、フロントも担当",
+      "comments": "リーダー1名、シニア1名、SE1名、新卒2名という構成のサーバチームで、情報伝達やスキル共有、新人教育など多くの経験を積んだ。\nチーム内のコミュニケーションが良好で、誰もが提案や指摘をしやすい理想的な開発環境だった。\n社内でカードゲームが流行しており、他チームとも自然に交流が生まれ、相談しやすい雰囲気があった。\nMuninなどの監視ツールの運用やスロークエリの観察・対処を積極的に行い、インフラ面の知見を得られた。\n社内勉強会やプレゼンが盛んな会社で、サーバチーム内でも週1回勉強会を開催していた。",
+      "contractType": "SES",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "Java",
         "HTML/CSS",
         "JavaScript",
-        "Spring",
-        "Python",
-        "Flask",
-        "nginx",
+        "Python"
+      ],
+      "databases": [
         "MySQL"
       ],
-      "description": "ブラウザ向けソーシャルゲームの開発\nサーバメインで、フロントも担当",
-      "comments": "リーダー1名、シニア1名、SE1名、新卒2名という構成のサーバチームで、情報伝達やスキル共有、新人教育など多くの経験を積んだ。\nチーム内のコミュニケーションが良好で、誰もが提案や指摘をしやすい理想的な開発環境だった。\n社内でカードゲームが流行しており、他チームとも自然に交流が生まれ、相談しやすい雰囲気があった。\nMuninなどの監視ツールの運用やスロークエリの観察・対処を積極的に行い、インフラ面の知見を得られた。\n社内勉強会やプレゼンが盛んな会社で、サーバチーム内でも週1回勉強会を開催していた。",
-      "contractType": "SES"
+      "serverOS": "macOS",
+      "frameworks": [
+        "Spring",
+        "Flask",
+        "nginx"
+      ]
     },
     {
       "id": 20,
@@ -492,22 +770,37 @@
       },
       "monthCount": 3,
       "teamSize": 2,
-      "technologies": [
+      "projectSize": 4,
+      "description": "iOS向けニュース配信アプリとCMSの開発\nサーバ、フロントを担当",
+      "contractType": "社員",
+      "isLeader": true,
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "Objective-C",
         "Python",
         "JavaScript",
-        "Pyramid",
+        "CoffeeScript"
+      ],
+      "databases": [
         "Redis",
-        "AFNetworking",
         "Realm",
-        "SDWebImage",
-        "AngularJS",
-        "CoffeeScript",
         "MySQL"
       ],
-      "description": "iOS向けニュース配信アプリとCMSの開発\nサーバ、フロントを担当",
-      "contractType": "社員",
-      "isLeader": true
+      "serverOS": "macOS",
+      "frameworks": [
+        "Pyramid",
+        "AFNetworking",
+        "SDWebImage",
+        "AngularJS"
+      ]
     },
     {
       "id": 21,
@@ -518,22 +811,37 @@
       },
       "monthCount": 6,
       "teamSize": 6,
-      "technologies": [
+      "projectSize": 7,
+      "description": "iOS,Android向けの地図・GPSを使ったクローズドな待ち合わせアプリ\niOSとサーバサイドを担当",
+      "contractType": "社員",
+      "isLeader": true,
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "Objective-C",
         "PHP",
         "JavaScript",
-        "Laravel",
+        "CoffeeScript"
+      ],
+      "databases": [
         "Redis",
-        "AngularJS",
-        "CoffeeScript",
-        "iOS",
-        "GPS",
-        "OpenGL",
         "MySQL"
       ],
-      "description": "iOS,Android向けの地図・GPSを使ったクローズドな待ち合わせアプリ\niOSとサーバサイドを担当",
-      "contractType": "社員",
-      "isLeader": true
+      "serverOS": "macOS",
+      "frameworks": [
+        "Laravel",
+        "AngularJS",
+        "iOS",
+        "GPS",
+        "OpenGL"
+      ]
     },
     {
       "id": 22,
@@ -544,22 +852,37 @@
       },
       "monthCount": 5,
       "teamSize": 6,
-      "technologies": [
+      "projectSize": 7,
+      "description": "Android向け電子クーポン、レシート発行アプリ\nサーバサイドとアプリの一部を担当",
+      "contractType": "社員",
+      "isLeader": true,
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "Objective-C",
         "PHP",
         "JavaScript",
-        "Laravel",
+        "CoffeeScript"
+      ],
+      "databases": [
         "Redis",
-        "AngularJS",
-        "CoffeeScript",
-        "iOS",
-        "GPS",
-        "OpenGL",
         "MySQL"
       ],
-      "description": "Android向け電子クーポン、レシート発行アプリ\nサーバサイドとアプリの一部を担当",
-      "contractType": "社員",
-      "isLeader": true
+      "serverOS": "macOS",
+      "frameworks": [
+        "Laravel",
+        "AngularJS",
+        "iOS",
+        "GPS",
+        "OpenGL"
+      ]
     },
     {
       "id": 23,
@@ -569,23 +892,38 @@
         "end": "2016/11"
       },
       "monthCount": 18,
-      "teamSize": 6,
-      "technologies": [
+      "teamSize": 2,
+      "projectSize": 4,
+      "description": "iOS向けニュース配信アプリとCMSの開発\nサーバサイドとフロントエンドを担当\n英語音声の再生などの機能\n過去に担当したニュースアプリの継続改修案件",
+      "contractType": "社員",
+      "isLeader": true,
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "Objective-C",
         "PHP",
         "JavaScript",
-        "Python",
-        "Pyramid",
+        "Python"
+      ],
+      "databases": [
         "Redis",
-        "AFNetworking",
         "Realm",
-        "SDWebImage",
-        "AngularJS",
         "MySQL"
       ],
-      "description": "iOS向けニュース配信アプリとCMSの開発\nサーバサイドとフロントエンドを担当\n英語音声の再生などの機能\n過去に担当したニュースアプリの継続改修案件",
-      "contractType": "社員",
-      "isLeader": true
+      "serverOS": "macOS",
+      "frameworks": [
+        "Pyramid",
+        "AFNetworking",
+        "SDWebImage",
+        "AngularJS"
+      ]
     },
     {
       "id": 24,
@@ -595,20 +933,35 @@
         "end": "2017/04"
       },
       "monthCount": 5,
-      "teamSize": 20,
-      "technologies": [
-        "Java",
-        "JavaScript",
-        "Spring",
-        "Redis",
-        "AngularJS",
-        "CoffeeScript",
-        "SASS",
-        "MySQL"
-      ],
+      "teamSize": 4,
+      "projectSize": 20,
       "description": "Android/iOS向けオンラインストラテジー系ゲームアプリとサーバAPI、CMSの開発\nサーバサイドを主に担当",
       "comments": "サーバAPI・CMS開発を主に担当。",
-      "contractType": "SES"
+      "contractType": "SES",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
+        "Java",
+        "JavaScript",
+        "CoffeeScript"
+      ],
+      "databases": [
+        "Redis",
+        "MySQL"
+      ],
+      "serverOS": "macOS",
+      "frameworks": [
+        "Spring",
+        "AngularJS",
+        "SASS"
+      ]
     },
     {
       "id": 25,
@@ -619,23 +972,38 @@
       },
       "monthCount": 16,
       "teamSize": 18,
-      "technologies": [
-        "Ruby on Rails",
+      "projectSize": 20,
+      "description": "医療・介護に特化した求人WEBサイト、iOS/Androidアプリ開発\n※後半はログ収集基盤構築と並行して従事",
+      "contractType": "SES",
+      "isLeader": true,
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "JavaScript",
         "Ruby",
-        "Vue.js",
-        "CoffeeScript",
-        "SASS",
+        "CoffeeScript"
+      ],
+      "databases": [
         "Redis",
-        "Google Analytics",
-        "Crashlytics",
-        "Repro",
         "MySQL",
         "Elasticsearch"
       ],
-      "description": "医療・介護に特化した求人WEBサイト、iOS/Androidアプリ開発\n※後半はログ収集基盤構築と並行して従事",
-      "contractType": "SES",
-      "isLeader": true
+      "serverOS": "macOS",
+      "frameworks": [
+        "Ruby on Rails",
+        "Vue.js",
+        "SASS",
+        "Google Analytics",
+        "Crashlytics",
+        "Repro"
+      ]
     },
     {
       "id": 26,
@@ -646,9 +1014,28 @@
       },
       "monthCount": 4,
       "teamSize": 10,
-      "technologies": [
-        "Elasticsearch",
-        "Ruby",
+      "projectSize": 16,
+      "description": "既存フィルタリングソフトのログをElasticsearchに取り込むための基盤構築\nサーバ設置からの基盤構築開発\nログ解析を含めた基本設計\nElasticsearchの初期構築\nLogstashによるログのフォーマット\nKibanaによるデータの可視化\n※求人検索サイト開発と並行して従事",
+      "comments": "ソフトウェアエンジニアが私１名、他はネットワーク、ハードウェアエンジニアであったためソフトウェアまわりの負荷が高くなることがあった。ElasticsearchのQAチームへの質問を投げるなどして解決した。",
+      "contractType": "受託",
+      "isLeader": true,
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
+        "Ruby"
+      ],
+      "databases": [
+        "Elasticsearch"
+      ],
+      "serverOS": "macOS",
+      "frameworks": [
         "Logstash",
         "Kibana",
         "FileBeats",
@@ -656,11 +1043,7 @@
         "i-Filter",
         "Kaspersky",
         "Juniper"
-      ],
-      "description": "既存フィルタリングソフトのログをElasticsearchに取り込むための基盤構築\nサーバ設置からの基盤構築開発\nログ解析を含めた基本設計\nElasticsearchの初期構築\nLogstashによるログのフォーマット\nKibanaによるデータの可視化\n※求人検索サイト開発と並行して従事",
-      "comments": "ソフトウェアエンジニアが私１名、他はネットワーク、ハードウェアエンジニアであったためソフトウェアまわりの負荷が高くなることがあった。ElasticsearchのQAチームへの質問を投げるなどして解決した。",
-      "contractType": "受託",
-      "isLeader": true
+      ]
     },
     {
       "id": 27,
@@ -671,15 +1054,29 @@
       },
       "monthCount": 4,
       "teamSize": 1,
-      "technologies": [
+      "projectSize": 1,
+      "description": "HTMLページを静的・動的にプレゼンテーションとして利用するための業務用iPadアプリ",
+      "contractType": "受託",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "HTML/CSS",
-        "JavaScript",
+        "JavaScript"
+      ],
+      "databases": [],
+      "serverOS": "macOS",
+      "frameworks": [
         "jQuery",
         "GreenSock",
         "SASS"
-      ],
-      "description": "HTMLページを静的・動的にプレゼンテーションとして利用するための業務用iPadアプリ",
-      "contractType": "受託"
+      ]
     },
     {
       "id": 28,
@@ -690,21 +1087,36 @@
       },
       "monthCount": 10,
       "teamSize": 10,
-      "technologies": [
+      "projectSize": 12,
+      "description": "某社ネットワーク機器のコンフィグ、OSインストールなど定常業務を管理するWebシステムの開発\n管理画面から入力した内容を元に、数百台に対してAnsibleによるNWコマンド実行を行う",
+      "contractType": "受託",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "Python",
         "HTML/CSS",
-        "JavaScript",
+        "JavaScript"
+      ],
+      "databases": [
+        "MySQL"
+      ],
+      "serverOS": "macOS",
+      "frameworks": [
         "Django",
         "Gulp",
         "jQuery",
         "GreenSock",
         "Ansible",
         "Vagrant",
-        "Net-LD",
-        "MySQL"
-      ],
-      "description": "某社ネットワーク機器のコンフィグ、OSインストールなど定常業務を管理するWebシステムの開発\n管理画面から入力した内容を元に、数百台に対してAnsibleによるNWコマンド実行を行う",
-      "contractType": "受託"
+        "Net-LD"
+      ]
     },
     {
       "id": 29,
@@ -715,18 +1127,32 @@
       },
       "monthCount": 4,
       "teamSize": 2,
-      "technologies": [
+      "projectSize": 2,
+      "description": "薬剤のプレゼンテーション、顧客にアンケートをとる際の営業ツールとしてのiPhoneX向けWebサイト\n※官公庁ドキュメント検索システムと並行して従事",
+      "contractType": "受託",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "Go",
         "HTML/CSS",
-        "JavaScript",
+        "JavaScript"
+      ],
+      "databases": [],
+      "serverOS": "macOS",
+      "frameworks": [
         "gin",
         "jQuery",
         "GreenSock",
         "Gulp",
         "SASS"
-      ],
-      "description": "薬剤のプレゼンテーション、顧客にアンケートをとる際の営業ツールとしてのiPhoneX向けWebサイト\n※官公庁ドキュメント検索システムと並行して従事",
-      "contractType": "受託"
+      ]
     },
     {
       "id": 30,
@@ -737,21 +1163,36 @@
       },
       "monthCount": 8,
       "teamSize": 4,
-      "technologies": [
+      "projectSize": 6,
+      "description": "官公庁、自治体等の資料（PDFドキュメント、CSV、WEBページ等）をスクレイピング、全文検索を可能とするシステム\nスタートアップ企業の支援\n※薬剤プレゼンテーションWebシステムと並行して従事",
+      "contractType": "SES",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "PHP",
         "Python",
-        "JavaScript",
+        "JavaScript"
+      ],
+      "databases": [
+        "MySQL",
+        "Elasticsearch"
+      ],
+      "serverOS": "macOS",
+      "frameworks": [
         "Laravel",
         "scrapy",
         "AWS",
         "AWS Batch",
         "serverless",
-        "OCR",
-        "MySQL",
-        "Elasticsearch"
-      ],
-      "description": "官公庁、自治体等の資料（PDFドキュメント、CSV、WEBページ等）をスクレイピング、全文検索を可能とするシステム\nスタートアップ企業の支援\n※薬剤プレゼンテーションWebシステムと並行して従事",
-      "contractType": "SES"
+        "OCR"
+      ]
     },
     {
       "id": 31,
@@ -762,17 +1203,32 @@
       },
       "monthCount": 3,
       "teamSize": 4,
-      "technologies": [
+      "projectSize": 5,
+      "description": "有料ブログの記事管理\n課金機能（クレジットカード、iOS月額課金）\nWordpressライクな記事入力画面",
+      "contractType": "受託",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
         "PHP",
         "JavaScript",
-        "Laravel",
-        "Vue.js",
-        "SASS",
-        "HTML/CSS",
+        "HTML/CSS"
+      ],
+      "databases": [
         "MySQL"
       ],
-      "description": "有料ブログの記事管理\n課金機能（クレジットカード、iOS月額課金）\nWordpressライクな記事入力画面",
-      "contractType": "受託"
+      "serverOS": "macOS",
+      "frameworks": [
+        "Laravel",
+        "Vue.js",
+        "SASS"
+      ]
     },
     {
       "id": 32,
@@ -783,14 +1239,28 @@
       },
       "monthCount": 2,
       "teamSize": 1,
-      "technologies": [
-        "Laravel",
-        "Vue.js",
-        "MySQL"
-      ],
+      "projectSize": 2,
       "description": "大学から提供されたRTPをはじめとする情報保護を目的としたプロトコルの検証、テスト実装",
       "comments": "平たくいえばWinnyなどの思想に近いものに思う。",
-      "contractType": "受託"
+      "contractType": "受託",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [],
+      "databases": [
+        "MySQL"
+      ],
+      "serverOS": "macOS",
+      "frameworks": [
+        "Laravel",
+        "Vue.js"
+      ]
     },
     {
       "id": 33,
@@ -801,15 +1271,29 @@
       },
       "monthCount": 15,
       "teamSize": 4,
-      "technologies": [
-        "React Native",
-        "TypeScript",
+      "projectSize": 6,
+      "description": "婚活マッチングアプリの開発（スタートアップの支援）\nAPIサーバの立ち上げ\nReact Nativeアプリの立ち上げ\nメディアサイト（Wordpress）の立ち上げ",
+      "comments": "APIサーバ、React Nativeアプリ、メディアサイト（WordPress）の立ち上げを一貫して担当。\nオフショア成果物の品質改善とビジネス要件のバランスを意識したリファクタリング方針の検討に従事。",
+      "contractType": "受託",
+      "phases": [
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
+        "TypeScript"
+      ],
+      "databases": [
         "MySQL",
         "Elasticsearch"
       ],
-      "description": "婚活マッチングアプリの開発（スタートアップの支援）\nAPIサーバの立ち上げ\nReact Nativeアプリの立ち上げ\nメディアサイト（Wordpress）の立ち上げ",
-      "comments": "APIサーバ、React Nativeアプリ、メディアサイト（WordPress）の立ち上げを一貫して担当。\nオフショア成果物の品質改善とビジネス要件のバランスを意識したリファクタリング方針の検討に従事。",
-      "contractType": "受託"
+      "serverOS": "macOS",
+      "frameworks": [
+        "React Native"
+      ]
     },
     {
       "id": 34,
@@ -820,15 +1304,30 @@
       },
       "monthCount": 3,
       "teamSize": 3,
-      "technologies": [
-        "Python",
-        "FastAPI",
-        "MySQL"
-      ],
+      "projectSize": 3,
       "description": "商工会・企業の提案するイベント・セミナーの作成、参加管理\n商品管理\n※路線検索アプリと並行して従事",
       "comments": "Laravelを拡張したクリーンアーキテクチャーを意識したFWだった。柔軟性はなかったのでただただクラスをたくさん作らないといけないFWだった印象。\nおそらく最初に書いた人が抜けてあとから書いたひとがしばらくメンテしていたと思われる。いくつかのクラス群・APIの作りに大きな違いがあり、パッチのようなハードコードが散見されたため、読み解くのに時間を要した。\nこれから参画するエンジニア向けに、機能追加をする際に、どのクラスをどの順序で読んでいけばいいかコメントを多くメモ的にドキュメント化した。",
       "contractType": "受託",
-      "isLeader": true
+      "isLeader": true,
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
+        "Python"
+      ],
+      "databases": [
+        "MySQL"
+      ],
+      "serverOS": "macOS",
+      "frameworks": [
+        "FastAPI"
+      ]
     },
     {
       "id": 35,
@@ -839,16 +1338,31 @@
       },
       "monthCount": 3,
       "teamSize": 3,
-      "technologies": [
-        "Python",
+      "projectSize": 3,
+      "description": "路線の検索、電車の現在位置を表示するアプリ\n※イベント・セミナー管理システムと並行して従事",
+      "comments": "BloCパターンということで引き継いだが実際にはStreamは使っておらずStateだけで動いている状態だった。",
+      "contractType": "受託",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
+        "Python"
+      ],
+      "databases": [
         "Elasticsearch",
-        "React",
         "MySQL",
         "Redis"
       ],
-      "description": "路線の検索、電車の現在位置を表示するアプリ\n※イベント・セミナー管理システムと並行して従事",
-      "comments": "BloCパターンということで引き継いだが実際にはStreamは使っておらずStateだけで動いている状態だった。",
-      "contractType": "受託"
+      "serverOS": "macOS",
+      "frameworks": [
+        "React"
+      ]
     },
     {
       "id": 36,
@@ -859,17 +1373,29 @@
       },
       "monthCount": 4,
       "teamSize": 3,
-      "technologies": [
-        "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "MySQL",
-        "Redis"
-      ],
+      "projectSize": 3,
       "description": "Movable Typeで構築されていた既存サイトをAWSへ移行\n観光データを検索するなどのAPIサーバを新規構築\n旅行データのCSV取り込み",
       "comments": "Movable Typeを利用するメリットは、HTMLコーダー、デザイナーの方がコンテンツの作成、メンテナンスができること。\nHTMLコンテンツとPHPを一緒にするわけにもいかず、\n観光データ部分をAPIサーバと分離する選択をとったが難しい判断だった。",
       "contractType": "受託",
-      "isLeader": true
+      "isLeader": true,
+      "phases": [
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest"
+      ],
+      "languages": [
+        "TypeScript"
+      ],
+      "databases": [
+        "MySQL",
+        "Redis"
+      ],
+      "serverOS": "macOS",
+      "frameworks": [
+        "Next.js",
+        "Tailwind CSS"
+      ]
     },
     {
       "id": 37,
@@ -880,18 +1406,29 @@
       },
       "monthCount": 2,
       "teamSize": 3,
-      "technologies": [
-        "Go",
-        "Flutter",
-        "JavaScript",
-        "HTML/CSS",
-        "MySQL",
-        "Redis"
-      ],
+      "projectSize": 3,
       "description": "ポイント発行サービスを導入とのことで、各リンクを押下した際に個人を特定する測定タグ付与する",
       "learning": "個人情報を扱う機能では、機能実装より先に、暗号化・復号の責任境界と運用手順を明確にすることが重要だと学んだ。\n他システム連携では、要求どおりに暗号方式を合わせるだけでなく、管理画面側の利用フローまで含めて破綻しない導線を設計する必要があると理解した。\n既存システムのDB移行は、推奨構成へ寄せる技術改善そのものより、将来の保守性とテストしやすさを回復させることに業務価値があると実感した。",
       "comments": "RSA暗号化は他システムとあわせるためのお客様要求。",
-      "contractType": "受託"
+      "contractType": "受託",
+      "phases": [
+        "detailedDesign",
+        "implementation",
+        "integrationTest"
+      ],
+      "languages": [
+        "Go",
+        "JavaScript",
+        "HTML/CSS"
+      ],
+      "databases": [
+        "MySQL",
+        "Redis"
+      ],
+      "serverOS": "macOS",
+      "frameworks": [
+        "Flutter"
+      ]
     },
     {
       "id": 38,
@@ -901,20 +1438,30 @@
         "end": "2024/11"
       },
       "monthCount": 8,
-      "teamSize": 3,
-      "technologies": [
-        "TypeScript",
-        "React",
-        "Ruby on Rails",
-        "MySQL",
-        "Redis",
-        "Firestore",
-        "HTML/CSS"
-      ],
+      "teamSize": 2,
+      "projectSize": 3,
       "description": "就職エージェントの業務サポートのためのWebシステム\n企業チャット、社内チャット、面接設定などの業務フロー実現\nReactをゼロから構築（ライブラリ選定・テンプレートコード生成）\nテックリードとして従事",
       "learning": "既存プロダクトへの機能追加では、新規実装の速さよりも、既存責務を壊さずに拡張できる境界設計が重要だと学んだ。\nチャットのようなリアルタイム機能は、画面実装だけでなく、状態同期や運用時のトラブルシュートまで見据えて設計する必要があると理解した。\nインフラをコード化すると、環境差分を減らすだけでなく、チームで変更履歴を追える状態を作れる点に業務価値があると実感した。",
       "contractType": "SES",
-      "isLeader": true
+      "phases": [
+        "detailedDesign",
+        "implementation",
+        "integrationTest"
+      ],
+      "languages": [
+        "TypeScript",
+        "HTML/CSS"
+      ],
+      "databases": [
+        "MySQL",
+        "Redis",
+        "Firestore"
+      ],
+      "serverOS": "macOS",
+      "frameworks": [
+        "React",
+        "Ruby on Rails"
+      ]
     },
     {
       "id": 39,
@@ -925,23 +1472,38 @@
       },
       "monthCount": 9,
       "teamSize": 10,
-      "technologies": [
-        "Flutter",
-        "Kotlin",
-        "GraphQL",
-        "Firebase",
-        "AWS",
-        "MySQL",
-        "Redis",
-        "Firestore",
-        "Revenuecat",
-        "OneSignal"
-      ],
+      "projectSize": 12,
       "description": "複数SNSプラットフォームへの同時投稿アプリ（フルスクラッチ）\n予約投稿、動画KPIのグラフ表示、サブスクリプション機能制限\nGraphQL API実装、Firebase/Revenuecat/OneSignalの技術選定・調査\nエンジニア側リーダーとして参加（開発会議での画面提案・機能選定）",
       "learning": "少人数のフルスクラッチ開発では、技術選定そのものよりも、チーム全体が追従できる構成と開発手順を作ることがリーダーの価値になると学んだ。\nプロトタイプは完成品を早く作るためではなく、仕様の曖昧さや実現リスクを早期に顕在化させるために使うべきだと理解した。\n外部サービス採用では、導入のしやすさだけでなく、将来の運用負荷、障害切り分け、課金設計への影響まで見て判断する必要があると実感した。\n技術リードは自分で実装を進めるだけでなく、周囲が担当領域を持てる状態まで育てて初めて再現性のある体制になると学んだ。",
       "comments": "サーバーサイド・フロントエンド含めたチームリーダーとして従事。\nFlutter未経験メンバーへOJTを実施し、数ヶ月後には画面単位で担当を任せられる体制を構築。\n新卒1名の育成も担当し、得意分野を見極めつつ戦力化に成功。\nデザイナーと協力して仕様策定・提案を推進し、開発の停滞を解消。\nAIエージェント（Vibe Coding）の活用をチームに導入。テストケース実装やスクラッチ開発でプロンプト・プロセスの相互レビューを実施。\nMCP Serverの技術検証など、AI活用の有用性を積極的に検証。",
       "contractType": "SES",
-      "isLeader": true
+      "isLeader": true,
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
+        "Kotlin"
+      ],
+      "databases": [
+        "MySQL",
+        "Redis",
+        "Firestore"
+      ],
+      "serverOS": "macOS",
+      "frameworks": [
+        "Flutter",
+        "GraphQL",
+        "Firebase",
+        "AWS",
+        "Revenuecat",
+        "OneSignal"
+      ]
     },
     {
       "id": 40,
@@ -952,48 +1514,74 @@
       },
       "monthCount": 3,
       "teamSize": 4,
-      "technologies": [
+      "projectSize": 4,
+      "description": "数学などの問題文画像をアップロードし、解き方やその解決手順を提示するアプリ\n既存機能の数学問題解説に、解き方の方針が複数あれば選択させそれぞれの解説を閲覧できる方針機能の実装を担当",
+      "learning": "AI機能を含むアプリ開発では、単にモデルを呼ぶだけでなく、どの責務をアプリ・API・検索基盤に分けるかを明確にすることが品質に直結すると学んだ。\n解説方針を複数提示するような機能では、正答率だけでなく、利用者が理解しやすい選択肢の出し方まで設計対象になると理解した。\nRAGや認証基盤を組み合わせる案件では、精度改善と同時に、データの流れを追跡しやすい構成にすることが保守性に効くと実感した。\nAI領域では評価設計が後付けだと改善が止まるため、実装初期から検証観点を持つことが重要だと学んだ。",
+      "comments": "OpenAI呼び出しにともなうRAGの設計・精査に参画。\nLLM評価テスト（promptfoo等）を用いた品質担保の手法を習得し、AI機能の設計精度向上に貢献。",
+      "contractType": "SES",
+      "phases": [
+        "detailedDesign",
+        "implementation",
+        "integrationTest"
+      ],
+      "languages": [
+        "Python"
+      ],
+      "databases": [
+        "PostgreSQL",
+        "Firestore"
+      ],
+      "serverOS": "macOS",
+      "frameworks": [
         "Flutter",
-        "Python",
         "FastAPI",
         "Firebase",
         "OpenAI",
         "GCP",
-        "PostgreSQL",
-        "Firestore",
         "LangSmith"
-      ],
-      "description": "数学などの問題文画像をアップロードし、解き方やその解決手順を提示するアプリ\n既存機能の数学問題解説に、解き方の方針が複数あれば選択させそれぞれの解説を閲覧できる方針機能の実装を担当",
-      "learning": "AI機能を含むアプリ開発では、単にモデルを呼ぶだけでなく、どの責務をアプリ・API・検索基盤に分けるかを明確にすることが品質に直結すると学んだ。\n解説方針を複数提示するような機能では、正答率だけでなく、利用者が理解しやすい選択肢の出し方まで設計対象になると理解した。\nRAGや認証基盤を組み合わせる案件では、精度改善と同時に、データの流れを追跡しやすい構成にすることが保守性に効くと実感した。\nAI領域では評価設計が後付けだと改善が止まるため、実装初期から検証観点を持つことが重要だと学んだ。",
-      "comments": "OpenAI呼び出しにともなうRAGの設計・精査に参画。\nLLM評価テスト（promptfoo等）を用いた品質担保の手法を習得し、AI機能の設計精度向上に貢献。",
-      "contractType": "SES"
+      ]
     },
     {
       "id": 41,
       "name": "AI文書レビュープラットフォーム",
       "period": {
         "start": "2026/01",
-        "end": "2026/03"
+        "end": "2026/04"
       },
       "monthCount": 3,
       "teamSize": 9,
-      "technologies": [
-        "TypeScript",
+      "projectSize": 10,
+      "description": "法務・契約書などのドキュメントレビュー業務を効率化するエンタープライズ向けプラットフォーム\nPDF/Word/Power Pointをアップロードし、各ドキュメント種類ごとに準備した観点を元に、LLMを利用したAIレビューを実施する",
+      "learning": "LLM機能の改善では、モデル出力そのものを見るだけでなく、利用者フィードバックを継続的に整理し、改善テーマへ落とし込む運用設計が重要だと学んだ。\nAIレビューの品質向上は、プロンプト調整前後の評価テストによって定量的に継続改善できると理解した。\nログ基盤は障害通知のためだけでなく、AI機能の失敗傾向を観測し、改善サイクルにつなげる観測基盤として設計する必要があると実感した。",
+      "comments": "フィードバック活用・改善プロジェクトにて、LLMを主軸にしたプロンプト改善を提案・実装。\nDSPyの自動プロンプト調整フローを参考に、プロンプト担当者の改善サイクルを支援するツールを構築。\npromptfoo llm-rubricを利用した評価ロジックを追加し、AI品質の継続的な計測基盤を整備。",
+      "contractType": "SES",
+      "phases": [
+        "requirementDefinition",
+        "basicDesign",
+        "detailedDesign",
+        "implementation",
+        "integrationTest",
+        "systemTest",
+        "maintenance"
+      ],
+      "languages": [
+        "TypeScript"
+      ],
+      "databases": [
+        "PostgreSQL"
+      ],
+      "serverOS": "macOS",
+      "frameworks": [
         "Next.js",
         "React",
         "OpenAI",
-        "PostgreSQL",
         "Terraform",
         "Prisma",
         "tRPC",
         "Vitest",
         "promptfoo",
         "GCP"
-      ],
-      "description": "法務・契約書などのドキュメントレビュー業務を効率化するエンタープライズ向けプラットフォーム\nPDF/Word/Power Pointをアップロードし、各ドキュメント種類ごとに準備した観点を元に、LLMを利用したAIレビューを実施する",
-      "learning": "LLM機能の改善では、モデル出力そのものを見るだけでなく、利用者フィードバックを継続的に整理し、改善テーマへ落とし込む運用設計が重要だと学んだ。\nAIレビューの品質向上は、単発のプロンプト調整ではなく、分類・優先順位付け・評価指標を回せる仕組みにして初めて継続改善できると理解した。\nログ基盤は障害通知のためだけでなく、AI機能の失敗傾向を観測し、改善サイクルにつなげる観測基盤として設計する必要があると実感した。",
-      "comments": "フィードバック活用・改善プロジェクトにて、LLMを主軸にしたプロンプト改善を提案・実装。\nDSPyの自動プロンプト調整フローを参考に、プロンプト担当者の改善サイクルを支援するツールを構築。\npromptfoo llm-rubricを利用した評価ロジックを追加し、AI品質の継続的な計測基盤を整備。",
-      "contractType": "SES"
+      ]
     }
   ]
 }
