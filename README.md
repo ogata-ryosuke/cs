@@ -1,28 +1,44 @@
-# Astro Project
+<div align="center">
 
-Astro + React + Tailwind CSS で構築された静的サイトプロジェクトです。
+# ◢ career-sheet ◣
 
-## 技術スタック
+*a static site, sharpened.*
 
-| 分野       | 技術                                  |
-| ---------- | ------------------------------------- |
-| Framework  | Astro 4                               |
-| UI         | React 18, Tailwind CSS, shadcn/ui     |
-| Language   | TypeScript                            |
+`Astro` × `React` × `Tailwind` × `TypeScript`
 
-## セットアップ
+</div>
+
+---
+
+## ⟡ Stack
+
+```
+┌─ Framework  ─ Astro 4 (static output)
+├─ View       ─ React 18 · islands architecture
+├─ Styling    ─ Tailwind CSS · shadcn/ui · tw-animate-css
+└─ Language   ─ TypeScript (strict)
+```
+
+## ⟡ Run
 
 ```bash
 npm install
-npm run dev
+npm run dev       # → localhost
+npm run build     # → dist/
+npm run preview   # → ship check
 ```
 
-| コマンド          | 説明                     |
-| ----------------- | ------------------------ |
-| `npm run dev`     | 開発サーバーを起動       |
-| `npm run build`   | プロダクションビルド     |
-| `npm run preview` | ビルド結果をプレビュー   |
+## ⟡ Structure
 
-## 開発について
+```
+src/
+├─ pages/        routes
+├─ layouts/      shells
+├─ components/   islands & primitives
+├─ lib/          utilities
+└─ styles/       tokens & globals
+```
 
-開発環境のセットアップやビルド手順の詳細は [DEVELOPMENT.md](DEVELOPMENT.md) を参照してください。
+---
+
+<sub>Deeper setup notes in [DEVELOPMENT.md](DEVELOPMENT.md).</sub>
