@@ -478,13 +478,9 @@
       "comments": "既存システムの改修方針を整理し、COBOL→Java変換の設計を担当。",
       "contractType": "受託",
       "phases": [
-        "requirementDefinition",
-        "basicDesign",
         "detailedDesign",
         "implementation",
-        "integrationTest",
-        "systemTest",
-        "maintenance"
+        "integrationTest"
       ],
       "languages": [
         "Java"
@@ -510,13 +506,9 @@
       "comments": "SNSモバイルサイトの新規開発において、PHPおよび形態素解析を活用した機能実装を担当。",
       "contractType": "SES",
       "phases": [
-        "requirementDefinition",
-        "basicDesign",
         "detailedDesign",
         "implementation",
-        "integrationTest",
-        "systemTest",
-        "maintenance"
+        "integrationTest"
       ],
       "languages": [
         "PHP"
@@ -623,13 +615,10 @@
       "comments": "PUSH通知の管理・配信基盤の設計から実装までを担当。",
       "contractType": "社員",
       "phases": [
-        "requirementDefinition",
         "basicDesign",
         "detailedDesign",
         "implementation",
-        "integrationTest",
-        "systemTest",
-        "maintenance"
+        "integrationTest"
       ],
       "languages": [
         "Java",
@@ -939,13 +928,10 @@
       "comments": "サーバAPI・CMS開発を主に担当。",
       "contractType": "SES",
       "phases": [
-        "requirementDefinition",
         "basicDesign",
         "detailedDesign",
         "implementation",
-        "integrationTest",
-        "systemTest",
-        "maintenance"
+        "integrationTest"
       ],
       "languages": [
         "Java",
@@ -1128,7 +1114,7 @@
       "monthCount": 4,
       "teamSize": 2,
       "projectSize": 2,
-      "description": "薬剤のプレゼンテーション、顧客にアンケートをとる際の営業ツールとしてのiPhoneX向けWebサイト\n※官公庁ドキュメント検索システムと並行して従事",
+      "description": "薬剤のプレゼンテーション、顧客にアンケートをとる際の営業ツールとしてのiPhoneX向けWebサイト\n運用としてバージョンアップなどの改修を数年間担当。\n※官公庁ドキュメント検索システムと並行して従事",
       "contractType": "受託",
       "phases": [
         "requirementDefinition",
@@ -1167,7 +1153,6 @@
       "description": "官公庁、自治体等の資料（PDFドキュメント、CSV、WEBページ等）をスクレイピング、全文検索を可能とするシステム\nスタートアップ企業の支援\n※薬剤プレゼンテーションWebシステムと並行して従事",
       "contractType": "SES",
       "phases": [
-        "requirementDefinition",
         "basicDesign",
         "detailedDesign",
         "implementation",
@@ -1207,13 +1192,9 @@
       "description": "有料ブログの記事管理\n課金機能（クレジットカード、iOS月額課金）\nWordpressライクな記事入力画面",
       "contractType": "受託",
       "phases": [
-        "requirementDefinition",
-        "basicDesign",
         "detailedDesign",
         "implementation",
-        "integrationTest",
-        "systemTest",
-        "maintenance"
+        "integrationTest"
       ],
       "languages": [
         "PHP",
@@ -1247,10 +1228,7 @@
         "requirementDefinition",
         "basicDesign",
         "detailedDesign",
-        "implementation",
-        "integrationTest",
-        "systemTest",
-        "maintenance"
+        "implementation"
       ],
       "languages": [],
       "databases": [
@@ -1310,13 +1288,9 @@
       "contractType": "受託",
       "isLeader": true,
       "phases": [
-        "requirementDefinition",
-        "basicDesign",
         "detailedDesign",
         "implementation",
-        "integrationTest",
-        "systemTest",
-        "maintenance"
+        "integrationTest"
       ],
       "languages": [
         "Python"
@@ -1343,13 +1317,9 @@
       "comments": "BloCパターンということで引き継いだが実際にはStreamは使っておらずStateだけで動いている状態だった。",
       "contractType": "受託",
       "phases": [
-        "requirementDefinition",
-        "basicDesign",
         "detailedDesign",
         "implementation",
-        "integrationTest",
-        "systemTest",
-        "maintenance"
+        "integrationTest"
       ],
       "languages": [
         "Python"

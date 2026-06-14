@@ -31,3 +31,5 @@ src/lib/projects_extracted.json
 
 # Excel output
 output/
+.claude/settings.local.json
+.claude/settings.local.json
