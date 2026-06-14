@@ -1,4 +1,5 @@
 import { trendingTechs } from '@/lib/tech-categories';
+import { PHASE_ORDER, PHASE_LABELS } from '@/lib/phases';
 import type { Project } from '@/lib/types';
 
 interface ProjectCardListProps {
@@ -27,6 +28,41 @@ export function ProjectCardList({ projects }: ProjectCardListProps) {
       {projects.map((project) => (
         <ProjectCard key={project.id} project={project} />
       ))}
+    </div>
+  );
+}
+
+function PhaseTrack({ phases }: { phases: Project['phases'] }) {
+  // Critic ガード: 担当工程が空のカードは「○が並ぶ＝未経験/欠損」に見えるため非表示
+  if (phases.length === 0) return null;
+
+  const handled = new Set(phases);
+
+  return (
+    <div>
+      <h4 className="text-[14px] font-semibold text-[#09090B] mb-1.5">担当工程</h4>
+      <ul className="flex flex-wrap gap-1">
+        {PHASE_ORDER.map((key) => {
+          const isHandled = handled.has(key);
+          const label = PHASE_LABELS[key];
+          return (
+            <li
+              key={key}
+              title={`${label}: ${isHandled ? '担当' : '担当外'}`}
+              aria-label={`${label}: ${isHandled ? '担当' : '担当外'}`}
+              className={[
+                'inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] border',
+                isHandled
+                  ? 'bg-[#EFF6FF] border-[#BFDBFE] text-[#1D4ED8] font-semibold'
+                  : 'bg-transparent border-[#E4E4E7] text-[#A1A1AA]',
+              ].join(' ')}
+            >
+              <span aria-hidden="true">{isHandled ? '●' : '○'}</span>
+              {label}
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }
@@ -77,6 +113,7 @@ function ProjectCard({ project }: { project: Project }) {
 
       {/* Body */}
       <div className="px-5 py-4 space-y-3">
+        <PhaseTrack phases={project.phases} />
         {descItems.length > 0 && (
           <div>
             <h4 className="text-[14px] font-semibold text-[#09090B] mb-1">担当業務</h4>
