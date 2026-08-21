@@ -57,6 +57,38 @@
       "以降：受託案件を中心に、見積もりから開発・リリースまで一貫して担当。"
     ]
   },
+  "aiUtilization": {
+    "title": "AI活用レベル",
+    "currentLevel": "Lv.5",
+    "currentCaption": "Loop / Harness Engineering",
+    "provenLevel": "Lv.6",
+    "provenNote": "実績あり",
+    "levels": [
+      {
+        "label": "Lv.5",
+        "caption": "Loop / Harness Engineering",
+        "items": [
+          "AI が PR の指摘修正 → 返信 → 承認獲得まで自律反復する Loop を自作し運用",
+          "実行ロックと反復制約により、エージェントの多重起動・無限ループを構造的に防止",
+          "PR状態判定を自作スクリプトに外出しして、コンテキスト節約（指摘コメント投稿は全自動、Approve は人間確認必須）"
+        ]
+      },
+      {
+        "label": "Lv.6",
+        "caption": "",
+        "items": [
+          "AI コードレビューをリポジトリ全 PR に強制適用し、マージブロック権限をつけるなどしてルール化",
+          "実運用で育てたカスタム Skills を GitHub で公開し、チームに共有"
+        ]
+      }
+    ],
+    "environment": [
+      "Claude Code（hooks / Skill / Subagent / Workflow）",
+      "Codex",
+      "CodeRabbit",
+      "git worktree による並行実行"
+    ]
+  },
   "projectsDisclaimer": "一部期間の重複や近接している箇所がございますが、同一クライアントからの継続案件、または複数案件の並行稼働によるものであり、誤記ではございません。",
   "projects": [
     {

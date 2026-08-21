@@ -72,12 +72,29 @@ export interface SelfPRData {
   strengths: string[];
 }
 
+export interface AILevelGroup {
+  label: string; // "Lv.5"
+  caption?: string; // "Loop / Harness Engineering"
+  items: string[];
+}
+
+export interface AIUtilizationData {
+  title: string;
+  currentLevel: string; // 現在到達しているレベル "Lv.5"
+  currentCaption: string; // "Loop / Harness Engineering"
+  provenLevel: string; // 実績のある上位レベル "Lv.6"
+  provenNote: string; // "実績あり"
+  levels: AILevelGroup[];
+  environment: string[];
+}
+
 export interface CareerSheetData {
   updateDate: string;
   profile: ProfileData;
   specialties: SpecialtiesData;
   skills: SkillsData;
   selfPR: SelfPRData;
+  aiUtilization?: AIUtilizationData;
   projectsDisclaimer?: string;
   projects: Project[];
 }
@@ -121,6 +138,10 @@ export interface SkillsCardProps {
 
 export interface SelfPRCardProps {
   selfPR: SelfPRData;
+}
+
+export interface AILevelCardProps {
+  data: AIUtilizationData;
 }
 
 export interface FilterBarProps {
