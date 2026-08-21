@@ -1,0 +1,67 @@
+---
+import type { AILevelCardProps } from '@/lib/types';
+
+type Props = AILevelCardProps;
+
+const { data } = Astro.props;
+---
+
+<div class="bg-bg-surface border border-border-light rounded-card overflow-hidden">
+  {/* Headline banner: 到達レベルを最も強いコントラストで提示 */}
+  <div class="flex flex-wrap items-center gap-sm bg-text-primary px-lg py-md">
+    <span class="inline-flex items-baseline gap-2 rounded-md bg-white px-3 py-1.5">
+      <span class="text-small font-semibold text-text-secondary">現在</span>
+      <span class="text-sectionHeading font-bold text-text-primary leading-none tracking-tight">
+        {data.currentLevel}
+      </span>
+    </span>
+    <span class="text-small text-white/70">{data.currentCaption}</span>
+    <span class="ml-auto inline-flex items-center gap-1.5 rounded-md border border-white/25 px-2.5 py-1">
+      <span class="text-small font-semibold text-white">{data.provenLevel}</span>
+      <span class="text-small text-white/60">{data.provenNote}</span>
+    </span>
+  </div>
+
+  {/* Level groups */}
+  <div class="divide-y divide-border-light">
+    {data.levels.map(group => (
+      <div class="px-lg py-md">
+        <div class="flex items-center gap-sm mb-sm">
+          <span class="inline-flex items-center rounded-md bg-bg-section px-2 py-0.5 text-body font-bold text-text-primary">
+            {group.label}
+          </span>
+          {group.caption && <span class="text-small text-text-secondary">{group.caption}</span>}
+        </div>
+        <ul class="space-y-xs">
+          {group.items.map(item => (
+            <li class="flex gap-sm items-start">
+              <svg
+                class="w-3.5 h-3.5 text-text-primary/40 flex-shrink-0 mt-1"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <p class="text-body text-text-secondary leading-relaxed flex-1">{item}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+
+  {/* Environment tags */}
+  <div class="px-lg py-md bg-bg-section border-t border-border-light">
+    <p class="text-small font-semibold text-text-secondary mb-xs">環境</p>
+    <div class="flex flex-wrap gap-xs">
+      {data.environment.map(env => (
+        <span class="inline-flex items-center rounded-md border border-border-light bg-bg-surface px-2.5 py-1 text-small text-text-primary hover:border-text-tertiary transition-colors">
+          {env}
+        </span>
+      ))}
+    </div>
+  </div>
+</div>

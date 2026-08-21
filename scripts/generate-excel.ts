@@ -22,7 +22,45 @@
 
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import ExcelJS from 'exceljs';
 import { processTemplate } from './lib/template-engine.js';
+
+/**
+ * 生成後の Excel を開き直し、指定テキストと完全一致するセルの
+ * 「1行目のみ太字」の richText に変換する。
+ * テンプレートエンジンはセル値を単一文字列で埋めるため、
+ * セル内の部分書式（先頭行のみ太字）はここで後処理として適用する。
+ */
+async function boldFirstLine(outputPath: string, fullText: string): Promise<void> {
+  const workbook = new ExcelJS.Workbook();
+  await workbook.xlsx.readFile(outputPath);
+
+  let applied = false;
+  workbook.eachSheet((worksheet) => {
+    worksheet.eachRow((row) => {
+      row.eachCell((cell) => {
+        if (applied || cell.value !== fullText) return;
+
+        const newlineIdx = fullText.indexOf('\n');
+        const firstLine = newlineIdx === -1 ? fullText : fullText.slice(0, newlineIdx);
+        const rest = newlineIdx === -1 ? '' : fullText.slice(newlineIdx);
+        const baseFont = cell.font ? { ...cell.font } : {};
+
+        cell.value = {
+          richText: [
+            { text: firstLine, font: { ...baseFont, bold: true } },
+            ...(rest ? [{ text: rest, font: { ...baseFont } }] : []),
+          ],
+        };
+        applied = true;
+      });
+    });
+  });
+
+  if (applied) {
+    await workbook.xlsx.writeFile(outputPath);
+  }
+}
 
 function deepMerge(
   target: Record<string, unknown>,
@@ -140,12 +178,46 @@ async function main(): Promise<void> {
     }
   }
 
+  // aiUtilization を Excel セル用の整形済みテキストに派生
+  // （テンプレートのセルでは {{#each}} が使えないため、複数行文字列に組み立てる）
+  const ai = data.aiUtilization as
+    | {
+        currentLevel: string;
+        currentCaption: string;
+        provenLevel: string;
+        provenNote: string;
+        levels: { label: string; caption?: string; items: string[] }[];
+        environment: string[];
+      }
+    | undefined;
+  if (ai) {
+    const head = `${ai.currentLevel}（${ai.currentCaption}）／${ai.provenLevel} ${ai.provenNote}`;
+    const levels = ai.levels
+      .map((group) => {
+        const caption = group.caption ? `（${group.caption}）` : '';
+        const items = group.items.map((item) => `・${item}`).join('\n');
+        return `【${group.label}】${caption}\n${items}`;
+      })
+      .join('\n\n');
+    const environment = `＜環境＞\n${ai.environment.join('、')}`;
+    (data.aiUtilization as Record<string, unknown>).excelText =
+      `${head}\n\n${levels}\n\n${environment}`;
+  }
+
   console.log(`テンプレート: ${templatePath}`);
   console.log(`データ:       ${dataPath}`);
   console.log(`出力先:       ${outputPath}`);
   console.log('');
 
   await processTemplate(templatePath, data, outputPath);
+
+  // AI活用レベルセルの1行目（レベルサマリー）のみ太字化
+  if (ai) {
+    await boldFirstLine(
+      outputPath,
+      (data.aiUtilization as Record<string, unknown>).excelText as string,
+    );
+  }
 
   console.log('Excel ファイルを生成しました。');
 }

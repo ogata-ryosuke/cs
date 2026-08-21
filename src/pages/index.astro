@@ -3,6 +3,7 @@ import Layout from '@/layouts/Layout.astro';
 import Header from '@/components/Header.astro';
 import ProfileCard from '@/components/ProfileCard.astro';
 import SkillsCard from '@/components/SkillsCard.astro';
+import AILevelCard from '@/components/AILevelCard.astro';
 import ProjectsSection from '@/components/react/ProjectsSection';
 import { careerData } from '@/lib/career-data-loader';
 ---
@@ -47,6 +48,15 @@ import { careerData } from '@/lib/career-data-loader';
         <div class="h-px bg-border-light"></div>
         <SkillsCard skills={careerData.skills} />
       </section>
+
+      {/* AI Utilization Level Section */}
+      {careerData.aiUtilization && (
+        <section class="space-y-sm">
+          <h2 class="text-sectionHeading text-text-primary font-bold">{careerData.aiUtilization.title}</h2>
+          <div class="h-px bg-border-light"></div>
+          <AILevelCard data={careerData.aiUtilization} />
+        </section>
+      )}
 
       {/* Self-PR Section */}
       <section class="space-y-sm">
